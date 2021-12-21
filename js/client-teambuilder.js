@@ -2202,37 +2202,39 @@
 					var hpIVs;
 					switch (hpType) {
 					case 'dark':
-						hpIVs = ['111111']; break;
+						hpIVs = ['001111', '011111', '101111']; break;
 					case 'dragon':
-						hpIVs = ['011111', '101111', '110111']; break;
+						hpIVs = ['000111', '010111', '100111', '110111']; break;
 					case 'ice':
-						hpIVs = ['010111', '100111', '111110']; break;
+						hpIVs = ['001110', '011110', '101110', '111110']; break;
 					case 'psychic':
-						hpIVs = ['011110', '101110', '110110']; break;
+						hpIVs = ['000110', '010110', '100110', '110110']; break;
 					case 'electric':
-						hpIVs = ['010110', '100110', '111011']; break;
+						hpIVs = ['001011', '011011', '101011', '111011']; break;
 					case 'grass':
-						hpIVs = ['011011', '101011', '110011']; break;
+						hpIVs = ['000011', '010011', '100011', '110011']; break;
 					case 'water':
-						hpIVs = ['100011', '111010']; break;
+						hpIVs = ['001010', '011010', '101010', '111010']; break;
 					case 'fire':
-						hpIVs = ['101010', '110010']; break;
+						hpIVs = ['000010', '010010', '100010', '110010']; break;
 					case 'steel':
-						hpIVs = ['100010', '111101']; break;
+						hpIVs = ['001101', '011101', '101101', '111101']; break;
 					case 'ghost':
-						hpIVs = ['101101', '110101']; break;
+						hpIVs = ['000101', '010101', '100101', '110101']; break;
 					case 'bug':
-						hpIVs = ['100101', '111100', '101100']; break;
+						hpIVs = ['001100', '011100', '101100', '111100']; break;
 					case 'rock':
-						hpIVs = ['001100', '110100', '100100']; break;
+						hpIVs = ['000100', '010100', '100100', '110100']; break;
 					case 'ground':
-						hpIVs = ['000100', '111001', '101001']; break;
+						hpIVs = ['001001', '011001', '101001', '111001']; break;
 					case 'poison':
-						hpIVs = ['001001', '110001', '100001']; break;
+						hpIVs = ['000001', '010001', '100001', '110001']; break;
 					case 'flying':
-						hpIVs = ['000001', '111000', '101000']; break;
+						hpIVs = ['001000', '011000', '101000', '111000']; break;
 					case 'fighting':
-						hpIVs = ['001000', '110000', '100000']; break;
+						hpIVs = ['000000', '010000', '100000', '110000']; break;
+					case 'fairy':
+						hpIVs = ['111111']; break;
 					}
 					buf += '<div style="margin-left:-80px;text-align:right"><select name="ivspread">';
 					buf += '<option value="" selected>HP ' + hpType.charAt(0).toUpperCase() + hpType.slice(1) + ' IVs</option>';
