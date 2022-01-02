@@ -1,6 +1,12 @@
+/* hides the "go use the client" message when you're actually on the client lol */
+.lobbyhidden {
+  display: none;
+}
+
+
+
 /* not really animation but disables accidentally dragging and making a new background, I couldn't do this inline */
-.infobox img
-{
+.infobox img {
   -webkit-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;

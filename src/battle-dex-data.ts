@@ -564,14 +564,16 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
   haagrossnuclear: 1560 + 33,
   actannuclear: 1560 + 34,
   
-  // uranium relevant mystery gifts
-  minyanmystery: 1596 + 0,
-  vilucardmystery: 1596 + 1,
-  cocaranmystery: 1596 + 2,
-  cararalmmystery: 1596 + 3,
-  cocancermystery: 1596 + 4,
-  jackdearymystery: 1596 + 5,
-  winotingermystery: 1596 + 6,
+  // uranium urayne + relevant mystery gifts
+  uraynegamma: 0,
+  uraynebeta: 1596 + 0,
+  minyanmystery: 1596 + 1,
+  vilucardmystery: 1596 + 2,
+  cocaranmystery: 1596 + 3,
+  cararalmmystery: 1596 + 4,
+  cocancermystery: 1596 + 5,
+  jackdearymystery: 1596 + 6,
+  winotingermystery: 1596 + 7,
 };
 
 const BattlePokemonIconIndexesLeft: {[id: string]: number} = {
