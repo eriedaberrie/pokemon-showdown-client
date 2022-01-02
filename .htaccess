@@ -157,7 +157,7 @@ RewriteRule ^preactalpha\.template\.html$ - [F]
 # RewriteRule ^testclient\.html$ - [F]
 RewriteRule ^testclient-beta\.html$ - [F]
 
-DirectoryIndex testclient.html
+DirectoryIndex ^testclient\.html
 RewriteRule ^index\.html$ - [F]
 
 RewriteCond %{REQUEST_FILENAME} !-f
