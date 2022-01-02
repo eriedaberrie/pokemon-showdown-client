@@ -1444,7 +1444,7 @@ exports.BattlePokemonSprites = {
 	vilucardmystery:{num:-2057},
 	modrille:{num:-2058},
 	drilgann:{num:-2059},
-	drilgannmega:{num:-2049},
+	drilgannmega:{num:-2059},
 	cocaran:{num:-2060},
 	cocaranmystery:{num:-2060},
 	cararalm:{num:-2061},
