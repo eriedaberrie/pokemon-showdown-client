@@ -683,6 +683,8 @@ const Dex = new class implements ModdedDex {
     } else if (num < 0) {
       num = 0;
     }
+    
+    if (id === 'uraynegamma') num = 0; // since index 0 is falsey >:(
 
 		if (window.BattlePokemonIconIndexes?.[id]) {
 			num = BattlePokemonIconIndexes[id];

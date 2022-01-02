@@ -565,7 +565,6 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
   actannuclear: 1560 + 34,
   
   // uranium urayne + relevant mystery gifts
-  uraynegamma: 0,
   uraynebeta: 1596 + 0,
   minyanmystery: 1596 + 1,
   vilucardmystery: 1596 + 2,
