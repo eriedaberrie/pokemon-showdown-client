@@ -1398,6 +1398,8 @@ class BattleTooltips {
 				if (value.abilityModify(0, 'Galvanize')) moveType = 'Electric';
 				if (value.abilityModify(0, 'Pixilate')) moveType = 'Fairy';
 				if (value.abilityModify(0, 'Refrigerate')) moveType = 'Ice';
+				if (value.abilityModify(0, 'Energizate')) moveType = 'Electric';
+				if (value.abilityModify(0, 'Atomizate')) moveType = 'Nuclear';
 			}
 			if (value.abilityModify(0, 'Normalize')) moveType = 'Normal';
 		}
@@ -1432,7 +1434,11 @@ class BattleTooltips {
 		if (move.id === 'hurricane' || move.id === 'thunder') {
 			value.weatherModify(0, 'Rain Dance');
 			value.weatherModify(0, 'Primordial Sea');
+      if (move.id === 'thunder') value.weatherModify(0, 'Thunderstorm');
 		}
+    if (move.id === 'expunge') {
+      value.weatherModify(0, 'Fallout');
+    }
 		value.abilityModify(0, 'No Guard');
 		if (!value.value) return value;
 
@@ -1745,9 +1751,16 @@ class BattleTooltips {
 		if (moveType === 'Steel') {
 			value.abilityModify(1.5, "Steely Spirit");
 		}
+		if (['Fire', 'Water', 'Electric'].includes(moveType)) {
+			value.abilityModify(1.5, "Elementalist");
+		}
 		if (move.flags['sound']) {
 			value.abilityModify(1.3, "Punk Rock");
 		}
+    value.abilityModify(2, "Sharp Coral");
+    if (move.priority > 0) {
+      value.abilityModify(1.5, "Acceleration");
+    }
 		if (target) {
 			if (["MF", "FM"].includes(pokemon.gender + target.gender)) {
 				value.abilityModify(0.75, "Rivalry");
@@ -1767,6 +1780,8 @@ class BattleTooltips {
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Galvanize");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Pixilate");
 				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Refrigerate");
+				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Energizate");
+				value.abilityModify(this.battle.gen > 6 ? 1.2 : 1.3, "Atomizate");
 			}
 			if (this.battle.gen > 6) {
 				value.abilityModify(1.2, "Normalize");
@@ -1856,7 +1871,8 @@ class BattleTooltips {
 			!this.battle.hasPseudoWeather('Electric Terrain') &&
 			!this.battle.hasPseudoWeather('Grassy Terrain') &&
 			!this.battle.hasPseudoWeather('Misty Terrain') &&
-			!this.battle.hasPseudoWeather('Psychic Terrain')
+			!this.battle.hasPseudoWeather('Psychic Terrain') &&
+			!this.battle.hasPseudoWeather('Sticky Terrain')
 		) {
 			value.set(0, 'no Terrain');
 		}

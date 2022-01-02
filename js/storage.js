@@ -48,12 +48,13 @@ Storage.bg = {
 	 * they still need to be extracted using Color Thief.
 	 */
 	load: function (bgUrl, bgid, hues) {
+    console.log(bgUrl);
 		this.id = bgid;
 		if (!bgid) {
 			if (location.host === 'smogtours.psim.us') {
 				bgid = 'shaymin';
 			} else if (location.host === Config.routes.client) {
-				bgid = ['horizon', 'ocean', 'waterfall', 'shaymin', 'charizards', 'psday'][Math.floor(Math.random() * 6)];
+				bgid = ['horizon', 'ocean', 'waterfall', 'shaymin', 'uranium', 'psday'][Math.floor(Math.random() * 6)];
 			} else {
 				$(document.body).css({
 					background: '',
@@ -110,6 +111,10 @@ Storage.bg = {
 				hues = ["24.705882352941174,25.37313432835821%", "260.4651162790697,59.44700460829492%", "165.3191489361702,46.07843137254901%", "16.363636363636367,42.63565891472869%", "259.04761904761904,34.05405405405405%", "24.705882352941174,25.37313432835821%"];
 				attrib = 'Pok&eacute;mon Showdown Day background <small>by LifeisDANK</small>';
 				break;
+      case 'uranium':
+				hues = ["195,63.15789473684211%", "126.79245283018867,55.789473684210535%", "18.620689655172402,18.47133757961784%", "128.62499999999997,73.39449541284402%", "162.85714285714286,22.580645161290324%"];
+        attrib = '<a href="https://pokemonuranium.co/forum/showthread.php?tid=661&page=7" target="_blank" class="subtle">UG Discover Background <small>by KyriTiger#0862</small></a>';
+        break;
 			case 'digimon':
 				hues = ["170.45454545454544,27.500000000000004%", "84.70588235294119,13.821138211382115%", "112.50000000000001,7.8431372549019605%", "217.82608695652175,54.761904761904766%", "0,1.6949152542372816%", ""];
 			}

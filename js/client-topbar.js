@@ -487,7 +487,7 @@
 			if (navigator.userAgent.includes(' Chrome/64.')) {
 				buf += '<p><label class="optlabel"><input type="checkbox" name="nogif"' + (Dex.prefs('nogif') ? ' checked' : '') + ' /> Disable GIFs for Chrome 64 bug</label></p>';
 			}
-			buf += '<p><label class="optlabel"><input type="checkbox" name="bwgfx"' + (Dex.prefs('bwgfx') ? ' checked' : '') + ' /> Use BW sprites instead of XY models</label></p>';
+			buf += '<p title="On by default because Uranium has BW-styled sprites, if you uncheck this you\'re medically insane."><label class="optlabel"><input type="checkbox" name="bwgfx"' + (!Dex.prefs('bwgfx') ? ' checked' : '') + ' /> Use BW sprites instead of XY models</label></p>';
 			buf += '<p><label class="optlabel"><input type="checkbox" name="nopastgens"' + (Dex.prefs('nopastgens') ? ' checked' : '') + ' /> Use modern sprites for past generations</label></p>';
 
 			buf += '<hr />';
@@ -575,7 +575,7 @@
 			$('html').toggleClass('dark', dark);
 		},
 		setBwgfx: function (e) {
-			var bwgfx = !!e.currentTarget.checked;
+			var bwgfx = !e.currentTarget.checked;
 			Storage.prefs('bwgfx', bwgfx);
 			Dex.loadSpriteData(bwgfx || Dex.prefs('noanim') ? 'bw' : 'xy');
 		},
@@ -769,7 +769,7 @@
 			buf += '<p><strong>Official</strong></p>';
 			buf += '<div class="bglist">';
 
-			buf += '<button name="setBg" value="charizards"' + (cur === 'charizards' ? ' class="cur"' : '') + '><span class="bg" style="background-position:0 -' + (90 * 0) + 'px"></span>Charizards</button>';
+			buf += '<button name="setBg" value="uranium"' + (cur === 'uranium' ? ' class="cur"' : '') + '><span class="bg" style="background-position:0 -' + (90 * 5) + 'px"></span>Uranium</button>';
 			buf += '<button name="setBg" value="horizon"' + (cur === 'horizon' ? ' class="cur"' : '') + '><span class="bg" style="background-position:0 -' + (90 * 1) + 'px"></span>Horizon</button>';
 			buf += '<button name="setBg" value="waterfall"' + (cur === 'waterfall' ? ' class="cur"' : '') + '><span class="bg" style="background-position:0 -' + (90 * 2) + 'px"></span>Waterfall</button>';
 			buf += '<button name="setBg" value="ocean"' + (cur === 'ocean' ? ' class="cur"' : '') + '><span class="bg" style="background-position:0 -' + (90 * 3) + 'px"></span>Ocean</button>';

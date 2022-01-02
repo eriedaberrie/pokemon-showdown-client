@@ -557,7 +557,7 @@ export class BattleScene implements BattleSceneStub {
 	updateGen() {
 		let gen = this.battle.gen;
 		if (Dex.prefs('nopastgens')) gen = 6;
-		if (Dex.prefs('bwgfx') && gen > 5) gen = 5;
+		if (!Dex.prefs('bwgfx') && gen > 5) gen = 5;
 		this.gen = gen;
 		this.activeCount = this.battle.nearSide?.active.length || 1;
 
@@ -925,9 +925,13 @@ export class BattleScene implements BattleSceneStub {
 				sandstorm: 'Sandstorm',
 				hail: 'Hail',
 				deltastream: 'Strong Winds',
+        thunderstorm: 'Thunderstorm',
+        fallout: 'Toxic Fallout',
 			};
 			weatherhtml = `${weatherNameTable[this.battle.weather] || this.battle.weather}`;
-			if (this.battle.weatherMinTimeLeft !== 0) {
+      if ((this.battle.weather === 'thunderstorm') || (this.battle.weather === 'fallout')) {
+        weatherhtml += ` <small>(${this.battle.weatherMinTimeLeft} turn${this.battle.weatherMinTimeLeft === 1 ? '' : 's'})</small>`;
+      } else if (this.battle.weatherMinTimeLeft !== 0) {
 				weatherhtml += ` <small>(${this.battle.weatherMinTimeLeft} or ${this.battle.weatherTimeLeft} turns)</small>`;
 			} else if (this.battle.weatherTimeLeft !== 0) {
 				weatherhtml += ` <small>(${this.battle.weatherTimeLeft} turn${this.battle.weatherTimeLeft === 1 ? '' : 's'})</small>`;
@@ -972,6 +976,7 @@ export class BattleScene implements BattleSceneStub {
 			case 'grassyterrain':
 			case 'mistyterrain':
 			case 'psychicterrain':
+      case 'stickyterrain':
 				terrain = pwid;
 				break;
 			default:

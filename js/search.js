@@ -229,6 +229,9 @@
 			// very hardcode
 			var tierTable = {
 				uber: "Uber",
+        gamma: "Gamma",
+        beta: "Beta",
+        alpha: "Alpha",
 				ou: "OU",
 				uu: "UU",
 				ru: "RU",

@@ -282,6 +282,9 @@ class PSSearchResults extends preact.Component<{search: DexSearch}> {
 		// very hardcode
 		const tierTable: {[id: string]: string} = {
 			uber: "Uber",
+      gamma: "Gamma",
+      beta: "Beta",
+      alpha: "Alpha",
 			caplc: "CAP LC",
 			capnfe: "CAP NFE",
 		};

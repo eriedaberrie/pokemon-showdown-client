@@ -446,6 +446,14 @@ License: GPLv2
 	background: #AAAAAA url(../fx/weather-strongwind.png) no-repeat scroll left top;
 	color: #666666;
 }
+.thunderstormweather {
+	background: #6B82B2 url(../fx/weather-thunderstorm.jpg) no-repeat scroll left top;
+	color: #002F82;
+}
+.falloutweather {
+	background: #77FF61 url(../fx/weather-fallout.png) no-repeat scroll left top;
+	color: #1B4E0E;
+}
 .mistyterrainweather {
 	background: #EEAACC url(../fx/weather-mistyterrain.png) no-repeat scroll left top;
 	color: #551144;

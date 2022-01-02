@@ -14,7 +14,7 @@ body {
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 
 	/* see https://pokemonshowdown.com/credits */
-	background: #344b6c url(../fx/discovery_screen_pokemon_uranium.png) no-repeat left center fixed;
+	background: #344b6c url(../fx/client-bg-uranium.jpg) no-repeat left center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -3629,4 +3629,12 @@ blink {
 	animation-timing-function: cubic-bezier(1.0,0,0,1.0);
 	animation-duration: 1s;
 	text-decoration: none;
+}
+
+
+
+
+/* custom */
+.news-embed {
+  display: none;
 }

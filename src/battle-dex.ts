@@ -182,15 +182,15 @@ const Dex = new class implements ModdedDex {
 	resourcePrefix = (() => {
 		let prefix = '';
 		if (window.document?.location?.protocol !== 'http:') prefix = 'https:';
-    return `../showdown-sprites/play.pokemonshowdown.com/`;
+    // return `../showdown-sprites/play.pokemonshowdown.com/`;
     return prefix+`//raw.githubusercontent.com/eriedaberrie/showdown-sprites/main/play.pokemonshowdown.com/`;
 		return `${prefix}//${window.Config ? Config.routes.client : 'play.pokemonshowdown.com'}/`;
 	})();
 
 	fxPrefix = (() => {
 		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
-    return `../showdown-sprites/play.pokemonshowdown.com/fx/`;
-    return prefix+`//raw.githubusercontent.com/eriedaberrie/showdown-sprites/main/play.pokemonshowdown.com/fx/`;
+    // return `../showdown-sprites/play.pokemonshowdown.com/fx/`;
+    return protocol+`//raw.githubusercontent.com/eriedaberrie/showdown-sprites/main/play.pokemonshowdown.com/fx/`;
 		return `${protocol}//${window.Config ? Config.routes.client : 'play.pokemonshowdown.com'}/fx/`;
 	})();
 
@@ -538,7 +538,7 @@ const Dex = new class implements ModdedDex {
 		//
 		let graphicsGen = mechanicsGen;
 		if (Dex.prefs('nopastgens')) graphicsGen = 6;
-		if (Dex.prefs('bwgfx') && graphicsGen >= 6) graphicsGen = 5;
+		if (!Dex.prefs('bwgfx') && graphicsGen >= 6) graphicsGen = 5;
 		spriteData.gen = Math.max(graphicsGen, Math.min(species.gen, 5));
 		const baseDir = ['', 'gen1', 'gen2', 'gen3', 'gen4', 'gen5', '', '', ''][spriteData.gen];
 
@@ -676,15 +676,20 @@ const Dex = new class implements ModdedDex {
 		} else if (window.BattlePokedex?.[id]?.num) {
 			num = BattlePokedex[id].num;
 		}
-		if (num < 0) num = 0;
 		if (num > 898) num = 0;
+    if (num === -2158 || num === -2159 || num === -2160) num = 0; // sea legendaries
+    if ((num > -2164) && (num < -2000)) {
+      num = -num - 621;
+    } else if (num < 0) {
+      num = 0;
+    }
 
 		if (window.BattlePokemonIconIndexes?.[id]) {
 			num = BattlePokemonIconIndexes[id];
 		}
 
 		if (isFemale) {
-			if (['unfezant', 'frillish', 'jellicent', 'meowstic', 'pyroar'].includes(id)) {
+			if (['unfezant', 'frillish', 'jellicent', 'meowstic', 'pyroar', 'feliger', 'chimaconda', 'fafninter'].includes(id)) {
 				num = BattlePokemonIconIndexes[id + 'f'];
 			}
 		}

@@ -218,6 +218,7 @@ const PSBackground = new class extends PSStreamModel {
 				if (bgid === this.curId) bgid = bgs[Math.floor(Math.random() * 5)];
 			}
 		}
+    bgid = 'uranium';
 		this.curId = bgid;
 
 		if (!bgUrl) {
@@ -306,6 +307,20 @@ const PSBackground = new class extends PSStreamModel {
 				url: 'https://seiryuuden.deviantart.com/art/The-Ultimate-Mega-Showdown-Charizards-414587079',
 				title: 'Charizards',
 				artist: 'Jessica Valencia',
+			};
+			break;
+		case 'uranium':
+			menuColors = [
+        "195,63.15789473684211%",
+        "126.79245283018867,55.789473684210535%",
+        "18.620689655172402,18.47133757961784%",
+        "128.62499999999997,73.39449541284402%",
+        "162.85714285714286,22.580645161290324%",
+      ];
+			attrib = {
+				url: 'https://pokemonuranium.co/forum/showthread.php?tid=661&page=7',
+				title: 'UG Discover Background',
+				artist: 'KyriTiger&#35;0862',
 			};
 			break;
 		case 'digimon':

@@ -509,11 +509,18 @@
 				buf += '<p>Cool! I just added some pretty cool teambuilder features, so I\'m pretty happy, too. Did you know you can drag and drop teams to different format-folders? You can also drag and drop them to and from your computer (works best in Chrome).</p>';
 				buf += '<p><button class="button" name="greeting" value="W"><i class="fa fa-question-circle"></i> Wait, who are you? Talking to a teambuilder is weird.</button></p>';
 			} else if (answer === 'W') {
-				buf += '<p>Oh, I\'m Zarel! I made a Credits button for this...</p>';
-				buf += '<div class="menugroup"><p><a href="//pokemonshowdown.com/credits" target="_blank"><button class="button mainmenu4"><i class="fa fa-info-circle"></i> Credits</button></a></p></div>';
+				buf += '<p>Oh, I\'m Zarel! <small>(And I\'m erie!)</small> I made a Credits button for this...</p>';
+				buf += '<p><button name="greeting" value="C" style="background: transparent; border: none !important;"><div class="menugroup"><div class="button mainmenu4"><i class="fa fa-info-circle"></i> Credits</div></div></button></p>';
 				buf += '<p>Isn\'t it pretty? Matches your background and everything. It used to be in the Main Menu but we had to get rid of it to save space.</p>';
 				buf += '<p>Speaking of, you should try <button class="button" name="background"><i class="fa fa-picture-o"></i> changing your background</button>.';
 				buf += '<p><button class="button" name="greeting" value="B"><i class="fa fa-hand-pointer-o"></i> You might be having too much fun with these buttons and icons</button></p>';
+			} else if (answer === 'C') {
+				buf += '<p>Hijacking the button since I have no clue where else to put the Uranium Showdown credits!</p>';
+				buf += '<p>Involuntary-Twitch and JV created Pok&eacute;mon Uranium, this simulator would obviously be impossible without them.</p>';
+				buf += '<p>KyriTiger&#35;0862 on Discord for making that awesome Urayne art and letting me use it as the background.</p>';
+				buf += '<p>Me, eriedaberrie, since I gotta put my name somewhere on this thing.</p>';
+				buf += '<p>And of course finally there\'s the whole Pokemon Showdown team which this whole thing is based on, the actual credits button for that is below.</p>';
+				buf += '<div class="menugroup"><p><a href="https://pokemonshowdown.com/credits" target="_blank"><button class="button mainmenu4"><i class="fa fa-info-circle"></i> Credits (for realz this time)</button></a></p></div>';
 			} else if (answer === 'B') {
 				buf += '<p>I paid good money for those icons! I need to get my money\'s worth!</p>';
 				buf += '<p><button class="button" name="greeting" value="WR"><i class="fa fa-exclamation-triangle"></i> Wait, really?</button></p>';
@@ -3374,7 +3381,7 @@
 
 			var gen = {1:'gen1', 2:'gen2', 3:'gen3', 4:'gen4', 5:'gen5', 6:'dex', 7:'dex', 8:'dex'}[Math.max(this.room.curTeam.gen, species.gen)];
 			if (Dex.prefs('nopastgens')) gen = 'dex';
-			if (Dex.prefs('bwgfx') && gen === 'dex') gen = 'gen5';
+			if (!Dex.prefs('bwgfx') && gen === 'dex') gen = 'gen5';
 			spriteDir += gen;
 			if (gen === 'dex') {
 				spriteSize = 120;

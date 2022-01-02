@@ -39,6 +39,12 @@ case 'full':
 	execSync(`node ./build-tools/build-minidex`, options);
 	full = ' full';
 	break;
+case 'a':
+	execSync(`node ./build-tools/build-indexes-quick`, options);
+	break;
+case 'i':
+	execSync(`node ./build-tools/build-minidex-real`, options);
+	break;
 case 'indexes':
 	execSync(`node ./build-tools/build-indexes`, options);
 	break;

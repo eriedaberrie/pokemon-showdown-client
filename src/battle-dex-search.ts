@@ -612,12 +612,12 @@ abstract class BattleTypedSearch<T extends SearchType> {
 			this.formatType = 'letsgo';
 			this.dex = Dex.mod('gen7letsgo' as ID);
 		}
-		if (format.includes('nationaldex') || format.startsWith('nd') || format.includes('natdex')) {
-			format = (format.startsWith('nd') ? format.slice(2) :
-				format.includes('natdex') ? format.slice(6) : format.slice(11)) as ID;
-			this.formatType = 'natdex';
-			if (!format) format = 'ou' as ID;
-		}
+    if (format.includes('nationaldex') || format.startsWith('nd') || format.includes('natdex')) {
+      format = (format.startsWith('nd') ? format.slice(2) :
+        format.includes('natdex') ? format.slice(6) : format.slice(11)) as ID;
+      // this.formatType = 'natdex';
+      if (!format) format = 'gamma' as ID;
+    }
 		if (this.formatType === 'letsgo') format = format.slice(6) as ID;
 		if (format.includes('metronome')) {
 			this.formatType = 'metronome';
@@ -660,10 +660,22 @@ abstract class BattleTypedSearch<T extends SearchType> {
 			this.baseIllegalResults = [];
 			this.illegalReasons = {};
 
+      const natdexbanlist = [
+        'Alakazam-Mega', 'Arceus', 'Blastoise-Mega', 'Blaziken-Mega', 'Calyrex-Ice', 'Calyrex-Shadow', 'Cinderace', 'Darkrai', 'Darmanitan-Galar',
+        'Deoxys-Attack', 'Deoxys-Base', 'Deoxys-Speed', 'Dialga', 'Dracovish', 'Dragapult', 'Eternatus', 'Genesect', 'Gengar-Mega', 'Giratina',
+        'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kangaskhan-Mega', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lucario-Mega',
+        'Lugia', 'Lunala', 'Magearna', 'Marshadow', 'Metagross-Mega', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
+        'Necrozma-Ultra', 'Palkia', 'Pheromosa', 'Rayquaza', 'Reshiram', 'Salamence-Mega', 'Shaymin-Sky', 'Solgaleo', 'Spectrier', 'Tornadus-Therian',
+        'Urshifu-Base', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Zygarde-Base', 'Zygarde-Complete',
+      ];
+      
 			for (const id in this.getTable()) {
 				if (!(id in legalityFilter)) {
-					this.baseIllegalResults.push([this.searchType, id as ID]);
-					this.illegalReasons[id] = 'Illegal';
+          const species = this.dex.species.get(id);
+          if (this.dex.gen !== 8 || species.isNonstandard !== "Past" || species.tier === 'Uber' || natdexbanlist.includes(species.baseSpecies) || natdexbanlist.includes(species.name)) {
+            this.baseIllegalResults.push([this.searchType, id as ID]);
+            this.illegalReasons[id] = 'Illegal';
+          }
 				}
 			}
 		}
@@ -785,7 +797,7 @@ abstract class BattleTypedSearch<T extends SearchType> {
 		}
 		let table = window.BattleTeambuilderTable;
 		const gen = this.dex.gen;
-		const tableKey = this.formatType === 'doubles' ? `gen${gen}doubles` :
+    const tableKey = this.formatType === 'doubles' ? `gen${gen}doubles` :
 			this.formatType === 'letsgo' ? 'gen7letsgo' :
 			this.formatType === 'bdsp' ? 'gen8bdsp' :
 			this.formatType === 'bdspdoubles' ? 'gen8bdspdoubles' :
@@ -872,8 +884,8 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 		const isVGCOrBS = format.startsWith('battlespot') || format.startsWith('battlestadium') || format.startsWith('vgc');
 		let isDoublesOrBS = isVGCOrBS || this.formatType?.includes('doubles');
 		const dex = this.dex;
-
 		let table = BattleTeambuilderTable;
+
 		if ((format.endsWith('cap') || format.endsWith('caplc')) && dex.gen < 8) {
 			table = table['gen' + dex.gen];
 		} else if (isVGCOrBS) {
@@ -929,7 +941,10 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 			} else {
 				tierSet = tierSet.slice(slices.Regular);
 			}
-		} else if (format === 'ou') tierSet = tierSet.slice(slices.OU);
+		} else if (format === 'gamma') tierSet = tierSet.slice(slices.Gamma);
+		else if (format === 'beta') tierSet = tierSet.slice(slices.Beta);
+		else if (format === 'alpha') tierSet = tierSet.slice(slices.Alpha);
+		else if (format === 'ou') tierSet = [...tierSet.slice(slices.Gamma), ...tierSet.slice(slices.OU, slices.Uber)];
 		else if (format === 'uu') tierSet = tierSet.slice(slices.UU);
 		else if (format === 'ru') tierSet = tierSet.slice(slices.RU || slices.UU);
 		else if (format === 'nu') tierSet = tierSet.slice(slices.NU || slices.UU);
@@ -943,6 +958,7 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 			tierSet = tierSet.slice(slices.AG);
 		} else if (format.includes('hackmons') || format.endsWith('bh')) tierSet = tierSet.slice(slices.AG || slices.Uber);
 		else if (format === 'monotype') tierSet = tierSet.slice(slices.Uber);
+		else if (format === 'doublesuranium') tierSet = tierSet.slice(slices.Uranium);
 		else if (format === 'doublesubers') tierSet = tierSet.slice(slices.DUber);
 		else if (format === 'doublesou' && dex.gen > 4) tierSet = tierSet.slice(slices.DOU);
 		else if (format === 'doublesuu') tierSet = tierSet.slice(slices.DUU);
@@ -1135,7 +1151,7 @@ class BattleItemSearch extends BattleTypedSearch<'item'> {
 		let table = BattleTeambuilderTable;
 		if (this.formatType?.startsWith('bdsp')) {
 			table = table['gen8bdsp'];
-		} else if (this.formatType === 'natdex') {
+		} else if (this.formatType === 'natdex' || (this.dex.gen === 8)) {
 			table = table['natdex'];
 		} else if (this.formatType === 'metronome') {
 			table = table['metronome'];
@@ -1368,6 +1384,10 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 			return ['megalauncher', 'technician'].includes(abilityid) && !moves.includes('originpulse');
 		case 'trickroom':
 			return species.baseStats.spe <= 100;
+    case 'gammaray':
+      return !moves.includes('radioacid');
+    case 'nuclearslash':
+      return !moves.includes('atomicpunch');
 		}
 
 		if (this.formatType === 'doubles' && BattleMoveSearch.GOOD_DOUBLES_MOVES.includes(id)) {
@@ -1396,10 +1416,10 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 		'acidarmor', 'agility', 'aromatherapy', 'auroraveil', 'autotomize', 'banefulbunker', 'batonpass', 'bellydrum', 'bulkup', 'calmmind', 'clangoroussoul', 'coil', 'cottonguard', 'courtchange', 'curse', 'defog', 'destinybond', 'detect', 'disable', 'dragondance', 'drainingkiss', 'encore', 'extremeevoboost', 'geomancy', 'glare', 'haze', 'healbell', 'healingwish', 'healorder', 'heartswap', 'honeclaws', 'kingsshield', 'leechseed', 'lightscreen', 'lovelykiss', 'lunardance', 'magiccoat', 'maxguard', 'memento', 'milkdrink', 'moonlight', 'morningsun', 'nastyplot', 'naturesmadness', 'noretreat', 'obstruct', 'painsplit', 'partingshot', 'perishsong', 'protect', 'quiverdance', 'recover', 'reflect', 'reflecttype', 'rest', 'roar', 'rockpolish', 'roost', 'shellsmash', 'shiftgear', 'shoreup', 'slackoff', 'sleeppowder', 'sleeptalk', 'softboiled', 'spikes', 'spikyshield', 'spore', 'stealthrock', 'stickyweb', 'strengthsap', 'substitute', 'switcheroo', 'swordsdance', 'synthesis', 'tailglow', 'tailwind', 'taunt', 'thunderwave', 'toxic', 'toxicspikes', 'transform', 'trick', 'whirlwind', 'willowisp', 'wish', 'yawn',
 	] as ID[] as readonly ID[];
 	static readonly GOOD_WEAK_MOVES = [
-		'accelerock', 'acrobatics', 'aquajet', 'avalanche', 'bonemerang', 'bouncybubble', 'bulletpunch', 'buzzybuzz', 'circlethrow', 'clearsmog', 'doubleironbash', 'dragondarts', 'dragontail', 'endeavor', 'facade', 'firefang', 'flipturn', 'freezedry', 'frustration', 'geargrind', 'grassknot', 'gyroball', 'hex', 'icefang', 'iceshard', 'iciclespear', 'knockoff', 'lowkick', 'machpunch', 'nightshade', 'nuzzle', 'pikapapow', 'psychocut', 'pursuit', 'quickattack', 'rapidspin', 'return', 'rockblast', 'scorchingsands', 'seismictoss', 'shadowclaw', 'shadowsneak', 'sizzlyslide', 'storedpower', 'stormthrow', 'suckerpunch', 'superfang', 'surgingstrikes', 'tailslap', 'tripleaxel', 'uturn', 'veeveevolley', 'voltswitch', 'watershuriken', 'weatherball',
+		'accelerock', 'acrobatics', 'aquajet', 'avalanche', 'bonemerang', 'bouncybubble', 'bulletpunch', 'buzzybuzz', 'circlethrow', 'clearsmog', 'doubleironbash', 'dragondarts', 'dragontail', 'endeavor', 'facade', 'firefang', 'flipturn', 'freezedry', 'frustration', 'geargrind', 'grassknot', 'gyroball', 'hex', 'icefang', 'iceshard', 'iciclespear', 'knockoff', 'lowkick', 'machpunch', 'nightshade', 'nuzzle', 'pikapapow', 'psychocut', 'pursuit', 'quickattack', 'rapidspin', 'return', 'rockblast', 'scorchingsands', 'seismictoss', 'shadowclaw', 'shadowsneak', 'sizzlyslide', 'storedpower', 'stormthrow', 'suckerpunch', 'superfang', 'surgingstrikes', 'tailslap', 'tripleaxel', 'uturn', 'veeveevolley', 'voltswitch', 'watershuriken', 'weatherball', 'metalwhip', 'radioacid', 'skyfall', 'flameimpact', 'instantcrush', 'getlucky', 'halflife', 'causticbreath', 'suddenstrike', 'nuclearwind',
 	] as ID[] as readonly ID[];
 	static readonly BAD_STRONG_MOVES = [
-		'beakblast', 'belch', 'burnup', 'crushclaw', 'doomdesire', 'dragonrush', 'dreameater', 'eggbomb', 'firepledge', 'flyingpress', 'futuresight', 'grasspledge', 'hyperbeam', 'hyperfang', 'hyperspacehole', 'jawlock', 'landswrath', 'lastresort', 'megakick', 'megapunch', 'mistyexplosion', 'muddywater', 'nightdaze', 'pollenpuff', 'rockclimb', 'selfdestruct', 'shelltrap', 'skyuppercut', 'slam', 'strength', 'submission', 'synchronoise', 'takedown', 'thrash', 'uproar', 'waterpledge',
+		'beakblast', 'belch', 'burnup', 'crushclaw', 'doomdesire', 'dragonrush', 'dreameater', 'eggbomb', 'firepledge', 'flyingpress', 'futuresight', 'grasspledge', 'hyperbeam', 'hyperfang', 'hyperspacehole', 'jawlock', 'landswrath', 'lastresort', 'megakick', 'megapunch', 'mistyexplosion', 'muddywater', 'nightdaze', 'pollenpuff', 'rockclimb', 'selfdestruct', 'shelltrap', 'skyuppercut', 'slam', 'strength', 'submission', 'synchronoise', 'takedown', 'thrash', 'uproar', 'waterpledge', 'laser pulse', 'fission burst',
 	] as ID[] as readonly ID[];
 	static readonly GOOD_DOUBLES_MOVES = [
 		'allyswitch', 'bulldoze', 'coaching', 'electroweb', 'faketears', 'fling', 'followme', 'healpulse', 'helpinghand', 'junglehealing', 'lifedew', 'muddywater', 'pollenpuff', 'psychup', 'ragepowder', 'safeguard', 'skillswap', 'snipeshot', 'wideguard',
@@ -1446,7 +1466,7 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 						continue;
 					}
 					if (this.formatType !== 'natdex' && move.isNonstandard === "Past") {
-						continue;
+						// continue;
 					}
 					if (
 						this.formatType?.startsWith('dlc1') &&
@@ -1480,7 +1500,7 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 				} else {
 					if (!(dex.gen < 8 || this.formatType === 'natdex') && move.isZ) continue;
 					if (typeof move.isMax === 'string') continue;
-					if (move.isNonstandard === 'Past' && this.formatType !== 'natdex') continue;
+					// if (move.isNonstandard === 'Past' && this.formatType !== 'natdex') continue;
 					if (move.isNonstandard === 'LGPE' && this.formatType !== 'letsgo') continue;
 					moves.push(move.id);
 				}
