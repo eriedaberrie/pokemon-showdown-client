@@ -32,5 +32,7 @@ package-lock.json
 /website/images/
 /website/ads.txt
 
+/index1.html
+
 !/data/pokedex-mini.js
 !/data/pokedex-mini-bw.js
