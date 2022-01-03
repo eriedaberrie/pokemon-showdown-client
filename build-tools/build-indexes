@@ -14,6 +14,11 @@ if (!fs.existsSync('data/pokemon-showdown')) {
 	});
 }
 
+// oml stop interrupting my git pulls
+try {
+  fs.unlinkSync('./data/pokemon-showdown/tools/simulate/index.js');
+} catch (e) {}
+
 process.stdout.write("Syncing data from Git repository... ");
 child_process.execSync('git pull', {cwd: 'data/pokemon-showdown'});
 child_process.execSync('npm run build', {cwd: 'data/pokemon-showdown'});
@@ -851,7 +856,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 		if (!learnset) continue;
 		learnsets[id] = {};
 		for (const moveid in learnset) {
-			const gens = learnset[moveid].map(x => Number(x[0]));
+      const gens = learnset[moveid].map(x => Number(x[0]));
 			const minGen = Math.min(...gens);
 			const vcOnly = (minGen === 7 && learnset[moveid].every(x => x[0] !== '7' || x === '7V') ||
 				minGen === 8 && learnset[moveid].every(x => x[0] !== '8' || x === '8V'));
