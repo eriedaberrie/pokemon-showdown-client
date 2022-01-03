@@ -2,6 +2,7 @@
 /audio/
 /config/
 /index.php
+/index1.html
 /preactalpha.html
 /crossprotocol.html
 /data/*
@@ -31,8 +32,6 @@ package-lock.json
 /website/files/
 /website/images/
 /website/ads.txt
-
-/index1.html
 
 !/data/pokedex-mini.js
 !/data/pokedex-mini-bw.js
