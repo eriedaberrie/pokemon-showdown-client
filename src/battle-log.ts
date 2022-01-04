@@ -1044,7 +1044,7 @@ export class BattleLog {
 		buf += '</div>\n';
 		buf += '<script>\n';
 		// buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="https://${Config.routes.client}/js/replay-embed.js?version'+daily+'"></'+'script>');\n`;
-		buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="https://combinatronics.com/eriedaberrie/pokemon-showdown-client/master/js/replay-embed.template.js?version'+daily+'" onerror="alert(\\\'Scripts failed to load! Either erie deleted the github repo or combinatronics stopped working. Either way, if you want the replay to be remotely playable you can open the file in notepad, and do a find-and-replace from combinatronics.com/eriedaberrie/pokemon-showdown-client/master to play.pokemonshowdown.com\\\')"></'+'script>');\n`;
+		buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="https://combinatronics.com/eriedaberrie/pokemon-showdown-client/master/js/replay-embed.template.js?version'+daily+'" onerror="let defaultscript = document.createElement(\\\'script\\\'); defaultscript.src = \\\'https://${Config.routes.client}/js/replay-embed.template.js?version\\\'+daily; defaultscript.onload = function () {alert(\\\'Custom Uranium script failed to load, defaulted to regular showdown graphics.\\\');}; document.head.appendChild(defaultscript);"></'+'script>');\n`;
 		buf += '</script>\n';
 		return buf;
 	}
