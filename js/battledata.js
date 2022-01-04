@@ -3582,7 +3582,7 @@ buf+='<div class="battle-log battle-log-inline"><div class="inner">'+battle.scen
 buf+='</div>\n';
 buf+='<script>\n';
 
-buf+="let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src=\"https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/js/replay-embed.template.js?version'+daily+'\"></'+'script>');\n";
+buf+="let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src=\"https://combinatronics.com/eriedaberrie/pokemon-showdown-client/master/js/replay-embed.template.js?version'+daily+'\" onerror=\"alert(\\'Scripts failed to load! Either erie deleted the github repo or combinatronics stopped working. Either way, if you want the replay to be remotely playable you can open the file in notepad, and do a find-and-replace from combinatronics.com/eriedaberrie/pokemon-showdown-client/master to play.pokemonshowdown.com\\')\"></'+'script>');\n";
 buf+='</script>\n';
 return buf;
 };BattleLog.
