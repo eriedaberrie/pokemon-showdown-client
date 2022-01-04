@@ -37,18 +37,18 @@ requireScript('https://play.pokemonshowdown.com/js/lib/ps-polyfill.js');
 requireScript('https://play.pokemonshowdown.com/config/config.js?a7');
 requireScript('https://play.pokemonshowdown.com/js/lib/jquery-1.11.0.min.js');
 requireScript('https://play.pokemonshowdown.com/js/lib/html-sanitizer-minified.js');
-requireScript('https://play.pokemonshowdown.com/js/battle-sound.js');
-requireScript('https://play.pokemonshowdown.com/js/battledata.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/pokedex-mini.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/pokedex-mini-bw.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/graphics.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/pokedex.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/moves.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/abilities.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/items.js?a7');
-requireScript('https://play.pokemonshowdown.com/data/teambuilder-tables.js?a7');
-requireScript('https://play.pokemonshowdown.com/js/battle-tooltips.js?a7');
-requireScript('https://play.pokemonshowdown.com/js/battle.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/js/battle-sound.js');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/js/battledata.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/pokedex-mini.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/pokedex-mini-bw.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/graphics.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/pokedex.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/moves.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/abilities.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/items.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/data/teambuilder-tables.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/js/battle-tooltips.js?a7');
+requireScript('https://raw.githubusercontent.com/eriedaberrie/pokemon-showdown-client/master/js/battle.js?a7');
 
 var Replays = {
 	battle: null,
