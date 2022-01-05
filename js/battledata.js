@@ -743,7 +743,8 @@ spriteid=species.spriteid||toID(pokemon.species);
 if(species.exists===false)return{spriteDir:'sprites/gen5',spriteid:'0',x:10,y:5};
 var spriteData={
 spriteid:spriteid,
-spriteDir:'sprites/dex',
+
+spriteDir:'sprites/gen5',
 x:-2,
 y:-3};
 
