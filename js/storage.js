@@ -505,6 +505,7 @@ Storage.initTestClient = function () {
 	if (typeof POKEMON_SHOWDOWN_TESTCLIENT_KEY === 'string') {
 		sid = POKEMON_SHOWDOWN_TESTCLIENT_KEY.replace(/\%2C/g, ',');
 	}
+  sid = 'According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small t' // wtf why does it work gies ur a god
 
 	Storage.whenAppLoaded(function (app) {
 		var get = $.get;
