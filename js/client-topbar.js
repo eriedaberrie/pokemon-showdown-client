@@ -684,6 +684,7 @@
 			var cur = +app.user.get('avatar');
 			var buf = '';
 			buf += '<p>Choose an avatar or <button name="close">Cancel</button></p>';
+			buf += '<p>(Non-Uranium avatars from regular Showdown can still be accessed with the <code>/avatar</code> command.)</p>';
 
 			buf += '<div class="avatarlist">';
 			for (var i = 1; i <= 27; i++) {
