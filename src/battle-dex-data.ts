@@ -997,7 +997,37 @@ const BattleAvatarNumbers: {[k: string]: string} = {
 	1003: '#1003',
 	1005: '#1005',
 	1010: '#1010',
+  
+  
+  1: 'vitor',
+  2: 'natalie',
+  3: 'pluto',
+  4: 'theo',
+  5: 'theo-2',
+  6: 'maria',
+  7: 'davern',
+  8: 'cali',
+  9: 'sheldon',
+  10: 'tiko',
+  11: 'rosalind',
+  12: 'vaeryn',
+  13: 'kaito',
+  14: 'hinata',
+  15: 'garlikid',
+  16: 'larkspur',
+  17: 'curie',
+  18: 'surfingninja',
+  19: 'surfingninjas',
+  20: 'actor',
+  21: 'actress',
+  22: 'diver',
+  23: 'piratejack',
+  24: 'piratesylvia',
+  25: 'nuclearhorde',
+  26: 'tsukininja',
+  27: 'namininja',
 };
+
 
 type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
 type NatureName = 'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' | 'Careful' | 'Docile' | 'Gentle' |

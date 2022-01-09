@@ -624,7 +624,7 @@ this.isFar=!!(n%2);
 }var _proto2=Side.prototype;_proto2.
 
 rollTrainerSprites=function rollTrainerSprites(){
-var sprites=['lucas','dawn','ethan','lyra','hilbert','hilda'];
+var sprites=['vitor','natalie','pluto','theo','theo-2'];
 this.avatar=sprites[Math.floor(Math.random()*sprites.length)];
 };_proto2.
 

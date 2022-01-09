@@ -624,7 +624,7 @@ export class Side {
 	}
 
 	rollTrainerSprites() {
-		let sprites = ['lucas', 'dawn', 'ethan', 'lyra', 'hilbert', 'hilda'];
+		let sprites = ['vitor', 'natalie', 'pluto', 'theo', 'theo-2'];
 		this.avatar = sprites[Math.floor(Math.random() * sprites.length)];
 	}
 

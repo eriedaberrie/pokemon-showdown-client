@@ -687,7 +687,7 @@ export class BattleScene implements BattleSceneStub {
 		pokemonhtml = '<div class="teamicons">' + pokemonhtml + '</div>';
 		const ratinghtml = side.rating ? ` title="Rating: ${BattleLog.escapeHTML(side.rating)}"` : ``;
 		const faded = side.name ? `` : ` style="opacity: 0.4"`;
-		return `<div class="trainer trainer-${posStr}"${faded}><strong>${BattleLog.escapeHTML(side.name)}</strong><div class="trainersprite"${ratinghtml} style="background-image:url(${Dex.resolveAvatar(side.avatar)})"></div>${pokemonhtml}</div>`;
+		return `<div class="trainer trainer-${posStr}"${faded}><strong>${BattleLog.escapeHTML(side.name)}</strong><div class="trainersprite ${['nuclearhorde', 'surfingninjas'].includes(side.avatar) ? side.avatar : ''}"${ratinghtml} style="background-image:url(${Dex.resolveAvatar(side.avatar)})"></div>${pokemonhtml}</div>`;
 	}
 	updateSidebar(side: Side) {
 		if (this.battle.gameType === 'freeforall') {
