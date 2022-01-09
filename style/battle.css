@@ -733,7 +733,7 @@ License: GPLv2
 .trainer .picon {
 	margin: 0 -4px;
 }
-.pixelated, .itemicon, .picon, .trainersprite {
+.pixelated, .itemicon, .picon, *:not(.ps-popup) > * > .trainersprite {
 	image-rendering: -moz-crisp-edges;
 	image-rendering: pixelated;
 	-ms-interpolation-mode: nearest-neighbor;
