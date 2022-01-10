@@ -34016,3 +34016,4 @@ BattleMoveAnims['laserpulse'] = {anim: BattleMoveAnims['triattack'].anim};
 BattleMoveAnims['gemstoneglimmer'] = {anim: BattleMoveAnims['powergem'].anim};
 BattleMoveAnims['causticbreath'] = {anim: BattleMoveAnims['dragonbreath'].anim};
 BattleMoveAnims['metalcruncher'] = {anim: BattleMoveAnims['bite'].anim};
+BattleMoveAnims['goldenfist'] = {anim: BattleMoveAnims['hammerarm'].anim};
