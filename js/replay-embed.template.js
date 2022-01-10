@@ -29,7 +29,7 @@ function requireScript(url) {
 }
 
 linkStyle('https://play.pokemonshowdown.com/style/font-awesome.css?');
-linkStyle('https://play.pokemonshowdown.com/style/battle.css?a7');
+linkStyle('https://combinatronics.com/eriedaberrie/pokemon-showdown-client/master/battle.css?a7');
 linkStyle('https://play.pokemonshowdown.com/style/replay.css?a7');
 linkStyle('https://play.pokemonshowdown.com/style/utilichart.css?a7');
 
