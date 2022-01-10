@@ -33038,7 +33038,7 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'linear');
 		},
 	},
-	nuclear: {
+	nuclearslash: {
 		anim(scene, [attacker, defender]) {
 			scene.backgroundEffect('#77FF61', 700, 0.5);
 			scene.showEffect('rightslash', {
