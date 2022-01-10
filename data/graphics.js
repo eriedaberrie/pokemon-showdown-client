@@ -39113,7 +39113,7 @@ opacity:0},
 'linear');
 }},
 
-nuclear:{
+nuclearslash:{
 anim:function(scene,_ref407){var attacker=_ref407[0],defender=_ref407[1];
 scene.backgroundEffect('#77FF61',700,0.5);
 scene.showEffect('rightslash',{
@@ -39614,8 +39614,38 @@ attacker.anim({opacity:0,time:50},'linear');
 scene.wait(200);
 }},
 
-drainlife:{
+metalcruncher:{
 anim:function(scene,_ref414){var attacker=_ref414[0],defender=_ref414[1];
+scene.backgroundEffect('#999999',800,0.4);
+scene.showEffect('topbite',{
+x:defender.x,
+y:defender.y+130,
+z:defender.z,
+scale:2,
+opacity:0,
+time:370},
+{
+y:defender.y+20,
+opacity:1,
+time:500},
+'linear','explode');
+scene.showEffect('bottombite',{
+x:defender.x,
+y:defender.y-130,
+z:defender.z,
+scale:2,
+opacity:0,
+time:370},
+{
+y:defender.y-20,
+opacity:1,
+time:500},
+'linear','explode');
+BattleOtherAnims.contactattack.anim(scene,[attacker,defender]);
+}},
+
+drainlife:{
+anim:function(scene,_ref415){var attacker=_ref415[0],defender=_ref415[1];
 scene.showEffect('electroball',{
 x:defender.x,
 y:defender.y,
@@ -39662,13 +39692,13 @@ BattleMoveAnims['crunch'].anim(scene,[attacker,defender]);
 }},
 
 stickyterrain:{
-anim:function(scene,_ref415){var attacker=_ref415[0];
+anim:function(scene,_ref416){var attacker=_ref416[0];
 scene.backgroundEffect('#770088',1000,0.3);
 BattleOtherAnims.dance.anim(scene,[attacker]);
 }},
 
 nuclearwind:{
-anim:function(scene,_ref416){var attacker=_ref416[0],defender=_ref416[1];
+anim:function(scene,_ref417){var attacker=_ref417[0],defender=_ref417[1];
 scene.backgroundEffect('#77FF61',900,0.4);
 
 for(var i=0;i<4;i++){
@@ -40090,6 +40120,6 @@ BattleMoveAnims['getlucky']={anim:BattleMoveAnims['psychic'].anim};
 BattleMoveAnims['laserpulse']={anim:BattleMoveAnims['triattack'].anim};
 BattleMoveAnims['gemstoneglimmer']={anim:BattleMoveAnims['powergem'].anim};
 BattleMoveAnims['causticbreath']={anim:BattleMoveAnims['dragonbreath'].anim};
-BattleMoveAnims['metalcruncher']={anim:BattleMoveAnims['bite'].anim};
+BattleMoveAnims['goldenfist']={anim:BattleMoveAnims['hammerarm'].anim};
 
 //# sourceMappingURL=graphics.js.map

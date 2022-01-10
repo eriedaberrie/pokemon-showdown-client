@@ -33539,6 +33539,36 @@ export const BattleMoveAnims: AnimTable = {
 			scene.wait(200);
 		},
 	},
+	metalcruncher: {
+		anim(scene, [attacker, defender]) {
+			scene.backgroundEffect('#999999', 800, 0.4);
+			scene.showEffect('topbite', {
+				x: defender.x,
+				y: defender.y + 130,
+				z: defender.z,
+				scale: 2,
+				opacity: 0,
+				time: 370,
+			}, {
+				y: defender.y + 20,
+				opacity: 1,
+				time: 500,
+			}, 'linear', 'explode');
+			scene.showEffect('bottombite', {
+				x: defender.x,
+				y: defender.y - 130,
+				z: defender.z,
+				scale: 2,
+				opacity: 0,
+				time: 370,
+			}, {
+				y: defender.y - 20,
+				opacity: 1,
+				time: 500,
+			}, 'linear', 'explode');
+			BattleOtherAnims.contactattack.anim(scene, [attacker, defender]);
+		},
+	},
 	drainlife: {
 		anim(scene, [attacker, defender]) {
 			scene.showEffect('electroball', {
@@ -34015,5 +34045,4 @@ BattleMoveAnims['getlucky'] = {anim: BattleMoveAnims['psychic'].anim};
 BattleMoveAnims['laserpulse'] = {anim: BattleMoveAnims['triattack'].anim};
 BattleMoveAnims['gemstoneglimmer'] = {anim: BattleMoveAnims['powergem'].anim};
 BattleMoveAnims['causticbreath'] = {anim: BattleMoveAnims['dragonbreath'].anim};
-BattleMoveAnims['metalcruncher'] = {anim: BattleMoveAnims['bite'].anim};
 BattleMoveAnims['goldenfist'] = {anim: BattleMoveAnims['hammerarm'].anim};
