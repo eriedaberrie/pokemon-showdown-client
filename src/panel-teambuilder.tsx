@@ -6,7 +6,7 @@
  */
 
 class TeambuilderRoom extends PSRoom {
-	readonly DEFAULT_FORMAT = 'gen8' as ID;
+	readonly DEFAULT_FORMAT = 'gen6defaultformat' as ID;
 
 	/**
 	 * - `""` - all

@@ -641,7 +641,7 @@ Storage.unpackAllTeams = function (buffer) {
 	if (buffer.charAt(0) === '[' && $.trim(buffer).indexOf('\n') < 0) {
 		// old format
 		return JSON.parse(buffer).map(function (oldTeam) {
-			var format = oldTeam.format || 'gen8';
+			var format = oldTeam.format || 'gen6defaultformat';
 			var capacity = 6;
 			if (format && format.slice(0, 3) !== 'gen') format = 'gen6' + format;
 			if (format && format.endsWith('-box')) {
@@ -670,7 +670,7 @@ Storage.unpackLine = function (line) {
 	var isBox = line.slice(0, bracketIndex).endsWith('-box');
 	var slashIndex = line.lastIndexOf('/', pipeIndex);
 	if (slashIndex < 0) slashIndex = bracketIndex; // line.slice(slashIndex + 1, pipeIndex) will be ''
-	var format = bracketIndex > 0 ? line.slice(0, isBox ? bracketIndex - 4 : bracketIndex) : 'gen8';
+	var format = bracketIndex > 0 ? line.slice(0, isBox ? bracketIndex - 4 : bracketIndex) : 'gen6defaultformat';
 	if (format && format.slice(0, 3) !== 'gen') format = 'gen6' + format;
 	return {
 		name: line.slice(slashIndex + 1, pipeIndex),
@@ -1105,7 +1105,7 @@ Storage.importTeam = function (buffer, teams) {
 		} else if (line.substr(0, 3) === '===' && teams) {
 			team = [];
 			line = $.trim(line.substr(3, line.length - 6));
-			var format = 'gen8';
+			var format = 'gen6defaultformat';
 			var capacity = 6;
 			var bracketIndex = line.indexOf(']');
 			if (bracketIndex >= 0) {
@@ -1539,7 +1539,7 @@ Storage.nwLoadTeamFile = function (filename, localApp) {
 		return;
 	}
 
-	var format = 'gen8';
+	var format = 'gen6defaultformat';
 	var capacity = 6;
 	var bracketIndex = line.indexOf(']');
 	if (bracketIndex >= 0) {

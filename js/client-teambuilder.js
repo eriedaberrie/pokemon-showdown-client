@@ -237,7 +237,7 @@
 					format = this.curFolder;
 				} else {
 					format = Storage.teams[i].format;
-					if (!format) format = 'gen8';
+					if (!format) format = 'gen6defaultformat';
 				}
 				if (!format) continue;
 				if (format in folderTable) continue;
@@ -407,7 +407,7 @@
 						continue;
 					}
 
-					if (filterFormat && filterFormat !== (team.format || 'gen8')) continue;
+					if (filterFormat && filterFormat !== (team.format || 'gen6defaultformat')) continue;
 					if (filterFolder !== undefined && filterFolder !== team.folder) continue;
 
 					if (this.curSearchVal) {
@@ -796,11 +796,11 @@
 					iconCache: ''
 				};
 			} else {
-				var format = this.curFolder || 'gen8';
+				var format = this.curFolder || 'gen6defaultformat';
 				var folder = '';
 				if (format && format.charAt(format.length - 1) === '/') {
 					folder = format.slice(0, -1);
-					format = 'gen8';
+					format = 'gen6defaultformat';
 				}
 				newTeam = {
 					name: (isBox ? 'Box ' : 'Untitled ') + (teams.length + 1),
@@ -1954,7 +1954,7 @@
 					this.$chart.scrollTop(0);
 				}
 				this.search.$inputEl = $inputEl;
-				this.search.setType(type, this.curTeam.format || 'gen8', this.curSet, cur);
+				this.search.setType(type, this.curTeam.format || 'gen6defaultformat', this.curSet, cur);
 				this.qInitial = q;
 				this.search.qName = this.curChartName;
 				if (wasIncomplete) {
