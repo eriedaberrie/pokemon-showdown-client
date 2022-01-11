@@ -1130,7 +1130,7 @@
 
 				var isGenericFormat = function (formatName) {
 					if (!formatName) return true;
-					if (/^gen\d+$/.test(formatName) || formatname === 'gen6defaultformat') return true;
+					if (/^gen\d+$/.test(formatName) || formatName === 'gen6defaultformat') return true;
 					return false;
 				};
 				if (exports.BattleFormats) {
