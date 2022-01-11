@@ -966,12 +966,14 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 		else if (this.formatType?.startsWith('bdsp') || this.formatType === 'letsgo' || this.formatType === 'stadium') {
 			tierSet = tierSet.slice(slices.Uber);
 		} else if (!isDoublesOrBS) {
+      /*
 			tierSet = [
 				...tierSet.slice(slices.OU, slices.UU),
 				...tierSet.slice(slices.AG, slices.Uber),
 				...tierSet.slice(slices.Uber, slices.OU),
 				...tierSet.slice(slices.UU),
 			];
+      */
       tierSet = [
         ...tierSet.slice(slices.Gamma, slices.Beta),
         ...tierSet.slice(slices.Uber, slices.Gamma),
