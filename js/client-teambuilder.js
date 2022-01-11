@@ -250,8 +250,8 @@
 					}
 					continue;
 				}
-				if (format === 'gen8') {
-					folders.push('B~');
+				if (format === 'gen6defaultformat') {
+					folders.push('D~');
 					continue;
 				}
 				switch (format.slice(0, 4)) {
@@ -1130,7 +1130,7 @@
 
 				var isGenericFormat = function (formatName) {
 					if (!formatName) return true;
-					if (/^gen\d+$/.test(formatName)) return true;
+					if (/^gen\d+$/.test(formatName) || formatname === 'gen6defaultformat') return true;
 					return false;
 				};
 				if (exports.BattleFormats) {
@@ -1954,7 +1954,7 @@
 					this.$chart.scrollTop(0);
 				}
 				this.search.$inputEl = $inputEl;
-				this.search.setType(type, this.curTeam.format || 'gen6defaultformat', this.curSet, cur);
+				this.search.setType(type, this.curTeam.format || 'gen8', this.curSet, cur);
 				this.qInitial = q;
 				this.search.qName = this.curChartName;
 				if (wasIncomplete) {
