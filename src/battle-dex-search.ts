@@ -963,7 +963,7 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 		else if (format === 'doublesou' && dex.gen > 4) tierSet = tierSet.slice(slices.DOU);
 		else if (format === 'doublesuu') tierSet = tierSet.slice(slices.DUU);
 		else if (format === 'doublesnu') tierSet = tierSet.slice(slices.DNU || slices.DUU);
-		else if (format === 'defaultformat') {
+		else if (format === '') {
       tierSet = [
         ...tierSet.slice(slices.Gamma, slices.Beta),
         ...tierSet.slice(slices.Uber, slices.Gamma),

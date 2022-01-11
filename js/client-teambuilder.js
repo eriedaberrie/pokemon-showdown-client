@@ -237,7 +237,7 @@
 					format = this.curFolder;
 				} else {
 					format = Storage.teams[i].format;
-					if (!format) format = 'gen6defaultformat';
+					if (!format) format = 'gen6';
 				}
 				if (!format) continue;
 				if (format in folderTable) continue;
@@ -250,7 +250,7 @@
 					}
 					continue;
 				}
-				if (format === 'gen6defaultformat') {
+				if (format === 'gen6') {
 					folders.push('D~');
 					continue;
 				}
@@ -407,7 +407,7 @@
 						continue;
 					}
 
-					if (filterFormat && filterFormat !== (team.format || 'gen6defaultformat')) continue;
+					if (filterFormat && filterFormat !== (team.format || 'gen6')) continue;
 					if (filterFolder !== undefined && filterFolder !== team.folder) continue;
 
 					if (this.curSearchVal) {
@@ -796,11 +796,11 @@
 					iconCache: ''
 				};
 			} else {
-				var format = this.curFolder || 'gen6defaultformat';
+				var format = this.curFolder || 'gen6';
 				var folder = '';
 				if (format && format.charAt(format.length - 1) === '/') {
 					folder = format.slice(0, -1);
-					format = 'gen6defaultformat';
+					format = 'gen6';
 				}
 				newTeam = {
 					name: (isBox ? 'Box ' : 'Untitled ') + (teams.length + 1),
@@ -842,7 +842,7 @@
 			document.getElementById("pasteData").value = team;
 			document.getElementById("pasteTitle").value = this.curTeam.name;
 			document.getElementById("pasteAuthor").value = app.user.get('name');
-			if (this.curTeam.format !== 'gen6defaultformat') document.getElementById("pasteNotes").value = "Format: " + this.curTeam.format;
+			if (this.curTeam.format !== 'gen6') document.getElementById("pasteNotes").value = "Format: " + this.curTeam.format;
 			document.getElementById("pokepasteForm").submit();
 		},
 
@@ -1130,7 +1130,7 @@
 
 				var isGenericFormat = function (formatName) {
 					if (!formatName) return true;
-					if (/^gen\d+$/.test(formatName) || formatName === 'gen6defaultformat') return true;
+					if (/^gen\d+$/.test(formatName)) return true;
 					return false;
 				};
 				if (exports.BattleFormats) {

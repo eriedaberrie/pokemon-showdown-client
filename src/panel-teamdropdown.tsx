@@ -472,7 +472,7 @@ class PSTeambuilder {
 
 				line = line.slice(3, -3).trim();
 				[curTeam.format, line] = this.splitPrefix(line, ']', 1) as [ID, string];
-				if (!curTeam.format) curTeam.format = 'gen6defaultformat' as ID;
+				if (!curTeam.format) curTeam.format = 'gen6' as ID;
 				else if (!curTeam.format.startsWith('gen')) curTeam.format = `gen6${curTeam.format}` as ID;
 
 				[curTeam.folder, curTeam.name] = this.splitPrefix(line, '/');
