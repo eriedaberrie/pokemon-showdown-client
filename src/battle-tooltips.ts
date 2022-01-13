@@ -1367,6 +1367,13 @@ class BattleTooltips {
 			case 'hail':
 				moveType = 'Ice';
 				break;
+			case 'thunderstorm':
+				if (item.id === 'utilityumbrella') break;
+				moveType = 'Electric';
+				break;
+			case 'fallout':
+				moveType = 'Nuclear';
+				break;
 			}
 		}
 		if (move.id === 'terrainpulse' && pokemon.isGrounded(serverPokemon)) {
@@ -1378,6 +1385,8 @@ class BattleTooltips {
 				moveType = 'Fairy';
 			} else if (this.battle.hasPseudoWeather('Psychic Terrain')) {
 				moveType = 'Psychic';
+			} else if (this.battle.hasPseudoWeather('Sticky Terrain')) {
+				moveType = 'Poison';
 			}
 		}
 
@@ -1638,7 +1647,8 @@ class BattleTooltips {
 				this.battle.hasPseudoWeather('Electric Terrain') ||
 				this.battle.hasPseudoWeather('Grassy Terrain') ||
 				this.battle.hasPseudoWeather('Misty Terrain') ||
-				this.battle.hasPseudoWeather('Psychic Terrain')
+				this.battle.hasPseudoWeather('Psychic Terrain') ||
+				this.battle.hasPseudoWeather('Sticky Terrain')
 			) {
 				value.modify(2, 'Terrain Pulse boost');
 			}
