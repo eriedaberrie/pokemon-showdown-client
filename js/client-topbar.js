@@ -1026,7 +1026,7 @@
 				buf += '<p class="buttonbar"><button name="close">Cancel</button></p>';
 			} else {
 				buf += '<p><label class="label">Password: <input class="textbox autofocus" type="password" name="password" autocomplete="current-password" style="width:173px"><button type="button" name="showPassword" aria-label="Show password" style="float:right;margin:-21px 0 10px;padding: 2px 6px" class="button"><i class="fa fa-eye"></i></button></label></p>';
-				buf += '<small>Keep in mind you\'re sending this over an http connection so I woudln\'t use a very private password here if I were you.</small>';
+				buf += '<small>Keep in mind you\'re sending this over an http connection so I wouldn\'t use a very private password here if I were you.</small>';
 				buf += '<p class="buttonbar"><button type="submit"><strong>Log in</strong></button> <button type="button" name="close">Cancel</button></p>';
 			}
 
