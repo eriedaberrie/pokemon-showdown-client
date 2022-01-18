@@ -14,14 +14,14 @@ npm-debug.log
 package-lock.json
 /vendor/
 
-/js/server/
+# /js/server/
 /js/*.js.map
-/js/battle*.js
-/js/panel*.js
+# /js/battle*.js
+# /js/panel*.js
 /js/replay-embed.js
-/js/client-main.js
-/js/client-core.js
-/js/client-connection.js
+# /js/client-main.js
+# /js/client-core.js
+# /js/client-connection.js
 
 /replays/caches/
 /replays/replay-config.inc.php
@@ -33,5 +33,8 @@ package-lock.json
 /website/images/
 /website/ads.txt
 
-!/data/pokedex-mini.js
-!/data/pokedex-mini-bw.js
+# !/data/pokedex-mini.js
+# !/data/pokedex-mini-bw.js
+
+!/config/config.js
+!/data/*.js
