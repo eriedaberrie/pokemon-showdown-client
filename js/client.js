@@ -730,7 +730,8 @@ function toId() {
 
 			var self = this;
 			var constructSocket = function () {
-				var protocol = (Config.server.port === 443 || Config.server.https) ? 'https' : 'http';
+				// var protocol = (Config.server.port === 443 || Config.server.https) ? 'https' : 'http';
+        var protocol = 'http';
 				Config.server.host = $.trim(Config.server.host);
 				try {
 					if (Config.server.host === 'localhost') {
