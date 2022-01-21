@@ -310,8 +310,9 @@
 
 		// name
 		var name = pokemon.name;
-		var tagStart = (pokemon.forme ? name.length - pokemon.forme.length - 1 : 0);
+		var tagStart = (pokemon.forme ? (name.endsWith("-Nuclear-Mega" ? name.length - 13 : (name.length - pokemon.forme.length - 1)) : 0));
 		if (tagStart) name = name.substr(0, tagStart);
+    
 		if (matchLength) {
 			name = name.substr(0, matchStart) + '<b>' + name.substr(matchStart, matchLength) + '</b>' + name.substr(matchStart + matchLength);
 		}
