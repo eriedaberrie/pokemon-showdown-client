@@ -35,5 +35,3 @@ package-lock.json
 
 !/data/pokedex-mini.js
 !/data/pokedex-mini-bw.js
-
-!/config/config.js
