@@ -5,7 +5,7 @@
 /index1.html
 /preactalpha.html
 /crossprotocol.html
-/data/
+/data/*
 node_modules/
 eslint-cache/
 .DS_Store

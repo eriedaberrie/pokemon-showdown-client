@@ -173,7 +173,7 @@ Config.customcolors = {
 };
 
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.2 (b897caef)";
+Config.version = "0.11.2 (f842d03d)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
