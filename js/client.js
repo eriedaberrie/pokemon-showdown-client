@@ -2654,6 +2654,9 @@ function toId() {
 				if (groupName || globalGroupName) buf += '<br />';
 				buf += '<small class="usergroup globalgroup">' + BattleLog.escapeHTML(data.customgroup) + '</small>';
 			}
+			if (userid === 'eriedaberrie') {
+				buf += '<br /><small class="usergroup globalgroup">epic dev (coolest guy on the server)</small>';
+			}
 			if (data.rooms) {
 				var battlebuf = '';
 				var chatbuf = '';
