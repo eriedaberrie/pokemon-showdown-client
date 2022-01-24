@@ -931,7 +931,7 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 		}
 		let tierSet: SearchRow[] = table.tierSet;
 		let slices: {[k: string]: number} = table.formatSlices;
-		if (format === 'ubers' || format === 'uber') tierSet = tierSet.slice(slices.Uber);
+		if (format === 'ubers' || format === 'uber' || format === 'uraniummixandmega') tierSet = tierSet.slice(slices.Uber);
 		else if (isVGCOrBS) {
 			if (
 				format === 'vgc2010' || format === 'vgc2016' || format.startsWith('vgc2019') ||
