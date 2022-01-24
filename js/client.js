@@ -2642,6 +2642,9 @@ function toId() {
 			if (data.status || offline) {
 				var status = offline ? '(Offline)' : data.status.startsWith('!') ? data.status.slice(1) : data.status;
 				buf += '<span class="userstatus' + (offline ? ' offline' : '') + '">' + BattleLog.escapeHTML(status) + '<br /></span>';
+        if (userid === 'eriedaberrie' && !offline) {
+          buf += '<small class="usergroup globalgroup"><small>epic dev (coolest guy on the server)</small></small><br />';
+        }
 			}
 			if (groupName) {
 				buf += '<small class="usergroup roomgroup">' + groupName + '</small>';
@@ -2653,9 +2656,6 @@ function toId() {
 			if (data.customgroup && toID(data.customgroup) !== toID(globalGroupName || groupName)) {
 				if (groupName || globalGroupName) buf += '<br />';
 				buf += '<small class="usergroup globalgroup">' + BattleLog.escapeHTML(data.customgroup) + '</small>';
-			}
-			if (userid === 'eriedaberrie') {
-				buf += '<br /><small class="usergroup globalgroup">epic dev (coolest guy on the server)</small>';
 			}
 			if (data.rooms) {
 				var battlebuf = '';
