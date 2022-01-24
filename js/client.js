@@ -2642,10 +2642,10 @@ function toId() {
 			if (data.status || offline) {
 				var status = offline ? '(Offline)' : data.status.startsWith('!') ? data.status.slice(1) : data.status;
 				buf += '<span class="userstatus' + (offline ? ' offline' : '') + '">' + BattleLog.escapeHTML(status) + '<br /></span>';
-        if (userid === 'eriedaberrie' && !offline) {
-          buf += '<small class="usergroup globalgroup"><small>epic dev (coolest guy on the server)</small></small><br />';
-        }
 			}
+      if (userid === 'eriedaberrie' && !offline) {
+        buf += '<small class="usergroup globalgroup"><small>epic dev (coolest guy on the server)</small></small><br />';
+      }
 			if (groupName) {
 				buf += '<small class="usergroup roomgroup">' + groupName + '</small>';
 				if (globalGroupName) buf += '<br />';
