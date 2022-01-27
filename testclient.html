@@ -11,8 +11,8 @@
 		<link rel="stylesheet" href="style/utilichart.css" />
 		<link rel="stylesheet" href="style/font-awesome.css" />
     
-    <!-- custom lobby intro animations because reasons -->
-    <link rel="stylesheet" href="style/customlobby.css" />
+		<!-- custom lobby intro animations because reasons -->
+		<link rel="stylesheet" href="style/customlobby.css" />
 		<meta name="robots" content="noindex" />
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		<script src="./config/config.js"></script>
@@ -34,6 +34,12 @@
 						};
 					} else {
 						alert('Unrecognised query string syntax: ' + location.search);
+					}
+				} else {
+					Config.server = {
+						id: location.hostname,
+						host: location.hostname,
+						port: 8000,
 					}
 				}
 			})();
