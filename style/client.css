@@ -1147,6 +1147,24 @@ p.or:after {
 	border-color: hsl(210,40%,21%);
 }
 
+/* kyris bg colors */
+body .button.mainmenu1 { background: linear-gradient(to bottom,  hsl(195,63.15789473684211%,72%),  hsl(195,63.15789473684211%,52%)); border-color: hsl(195,63.15789473684211%,40%); }
+body .button.mainmenu1:hover { background: linear-gradient(to bottom,  hsl(195,63.15789473684211%,62%),  hsl(195,63.15789473684211%,42%)); border-color: hsl(195,63.15789473684211%,21%); }
+body .button.mainmenu1:active { background: linear-gradient(to bottom,  hsl(195,63.15789473684211%,42%),  hsl(195,63.15789473684211%,58%)); border-color: hsl(195,63.15789473684211%,21%); }
+body .button.mainmenu2 { background: linear-gradient(to bottom,  hsl(126.79245283018867,55.789473684210535%,72%),  hsl(126.79245283018867,55.789473684210535%,52%)); border-color: hsl(126.79245283018867,55.789473684210535%,40%); }
+body .button.mainmenu2:hover { background: linear-gradient(to bottom,  hsl(126.79245283018867,55.789473684210535%,62%),  hsl(126.79245283018867,55.789473684210535%,42%)); border-color: hsl(126.79245283018867,55.789473684210535%,21%); }
+body .button.mainmenu2:active { background: linear-gradient(to bottom,  hsl(126.79245283018867,55.789473684210535%,42%),  hsl(126.79245283018867,55.789473684210535%,58%)); border-color: hsl(126.79245283018867,55.789473684210535%,21%); }
+body .button.mainmenu3 { background: linear-gradient(to bottom,  hsl(18.620689655172402,18.47133757961784%,72%),  hsl(18.620689655172402,18.47133757961784%,52%)); border-color: hsl(18.620689655172402,18.47133757961784%,40%); }
+body .button.mainmenu3:hover { background: linear-gradient(to bottom,  hsl(18.620689655172402,18.47133757961784%,62%),  hsl(18.620689655172402,18.47133757961784%,42%)); border-color: hsl(18.620689655172402,18.47133757961784%,21%); }
+body .button.mainmenu3:active { background: linear-gradient(to bottom,  hsl(18.620689655172402,18.47133757961784%,42%),  hsl(18.620689655172402,18.47133757961784%,58%)); border-color: hsl(18.620689655172402,18.47133757961784%,21%); }
+body .button.mainmenu4 { background: linear-gradient(to bottom,  hsl(128.62499999999997,73.39449541284402%,72%),  hsl(128.62499999999997,73.39449541284402%,52%)); border-color: hsl(128.62499999999997,73.39449541284402%,40%); }
+body .button.mainmenu4:hover { background: linear-gradient(to bottom,  hsl(128.62499999999997,73.39449541284402%,62%),  hsl(128.62499999999997,73.39449541284402%,42%)); border-color: hsl(128.62499999999997,73.39449541284402%,21%); }
+body .button.mainmenu4:active { background: linear-gradient(to bottom,  hsl(128.62499999999997,73.39449541284402%,42%),  hsl(128.62499999999997,73.39449541284402%,58%)); border-color: hsl(128.62499999999997,73.39449541284402%,21%); }
+body .button.mainmenu5 { background: linear-gradient(to bottom,  hsl(162.85714285714286,22.580645161290324%,72%),  hsl(162.85714285714286,22.580645161290324%,52%)); border-color: hsl(162.85714285714286,22.580645161290324%,40%); }
+body .button.mainmenu5:hover { background: linear-gradient(to bottom,  hsl(162.85714285714286,22.580645161290324%,62%),  hsl(162.85714285714286,22.580645161290324%,42%)); border-color: hsl(162.85714285714286,22.580645161290324%,21%); }
+body .button.mainmenu5:active { background: linear-gradient(to bottom,  hsl(162.85714285714286,22.580645161290324%,42%),  hsl(162.85714285714286,22.580645161290324%,58%)); border-color: hsl(162.85714285714286,22.580645161290324%,21%); }
+
+/*
 .button.mainmenu1 { background: linear-gradient(to bottom,  hsl(5,40%,72%),  hsl(5,40%,52%)); border-color: hsl(5,40%,40%); }
 .button.mainmenu1:hover { background: linear-gradient(to bottom,  hsl(5,40%,62%),  hsl(5,40%,42%)); }
 .button.mainmenu1:active { background: linear-gradient(to bottom,  hsl(5,40%,42%),  hsl(5,40%,58%)); }
@@ -1166,6 +1184,7 @@ p.or:after {
 .button.mainmenu5 { background: linear-gradient(to bottom,  hsl(210,40%,72%),  hsl(210,40%,52%)); border-color: hsl(210,40%,40%); }
 .button.mainmenu5:hover { background: linear-gradient(to bottom,  hsl(210,40%,62%),  hsl(210,40%,42%)); }
 .button.mainmenu5:active { background: linear-gradient(to bottom,  hsl(210,40%,42%),  hsl(210,40%,58%)); }
+*/
 
 .button.mainmenu6 { background: linear-gradient(to bottom,  hsl(270,40%,72%),  hsl(270,40%,52%)); border-color: hsl(270,40%,40%); }
 .button.mainmenu6:hover { background: linear-gradient(to bottom,  hsl(270,40%,62%),  hsl(270,40%,42%)); }
