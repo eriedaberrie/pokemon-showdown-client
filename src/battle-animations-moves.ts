@@ -32891,10 +32891,10 @@ export const BattleMoveAnims: AnimTable = {
 	},
 	oceanswrath: {
 		anim(scene, [attacker, defender]) {
-      BattleMoveAnims['watersport'].anim(scene, [attacker, defender]);
+			BattleMoveAnims['watersport'].anim(scene, [attacker, defender]);
       
 			scene.backgroundEffect('#0000DD', 1500, 0.3);
-      defender.delay(600);
+			defender.delay(600);
 			defender.anim({
 				x: defender.x - 5,
 				time: 75,
@@ -32931,7 +32931,7 @@ export const BattleMoveAnims: AnimTable = {
 				x: defender.x,
 				time: 100,
 			});
-      scene.wait(600);
+			scene.wait(600);
 			for (let i = 0; i < 4; i++) {
 				scene.showEffect('waterwisp', {
 					x: defender.x + 50,

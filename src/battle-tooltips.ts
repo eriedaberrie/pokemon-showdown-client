@@ -1443,11 +1443,11 @@ class BattleTooltips {
 		if (move.id === 'hurricane' || move.id === 'thunder') {
 			value.weatherModify(0, 'Rain Dance');
 			value.weatherModify(0, 'Primordial Sea');
-      if (move.id === 'thunder') value.weatherModify(0, 'Thunderstorm');
+    		if (move.id === 'thunder') value.weatherModify(0, 'Thunderstorm');
 		}
-    if (move.id === 'expunge') {
-      value.weatherModify(0, 'Fallout');
-    }
+		if (move.id === 'expunge') {
+			value.weatherModify(0, 'Fallout');
+		}
 		value.abilityModify(0, 'No Guard');
 		if (!value.value) return value;
 

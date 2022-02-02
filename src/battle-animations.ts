@@ -925,13 +925,13 @@ export class BattleScene implements BattleSceneStub {
 				sandstorm: 'Sandstorm',
 				hail: 'Hail',
 				deltastream: 'Strong Winds',
-        thunderstorm: 'Thunderstorm',
-        fallout: 'Toxic Fallout',
+				thunderstorm: 'Thunderstorm',
+				fallout: 'Toxic Fallout',
 			};
 			weatherhtml = `${weatherNameTable[this.battle.weather] || this.battle.weather}`;
-      if ((this.battle.weather === 'thunderstorm') || (this.battle.weather === 'fallout')) {
-        weatherhtml += ` <small>(${this.battle.weatherMinTimeLeft} turn${this.battle.weatherMinTimeLeft === 1 ? '' : 's'})</small>`;
-      } else if (this.battle.weatherMinTimeLeft !== 0) {
+			if ((this.battle.weather === 'thunderstorm') || (this.battle.weather === 'fallout')) {
+				weatherhtml += ` <small>(${this.battle.weatherMinTimeLeft} turn${this.battle.weatherMinTimeLeft === 1 ? '' : 's'})</small>`;
+			} else if (this.battle.weatherMinTimeLeft !== 0) {
 				weatherhtml += ` <small>(${this.battle.weatherMinTimeLeft} or ${this.battle.weatherTimeLeft} turns)</small>`;
 			} else if (this.battle.weatherTimeLeft !== 0) {
 				weatherhtml += ` <small>(${this.battle.weatherTimeLeft} turn${this.battle.weatherTimeLeft === 1 ? '' : 's'})</small>`;
@@ -955,11 +955,15 @@ export class BattleScene implements BattleSceneStub {
 	}
 	upkeepWeather() {
 		const isIntense = ['desolateland', 'primordialsea', 'deltastream'].includes(this.curWeather);
-		this.$weather.animate({
-			opacity: 1.0,
-		}, 300).animate({
-			opacity: isIntense ? 0.9 : 0.5,
-		}, 300);
+		if (this.curWeather === 'thunderstorm') {
+			this.backgroundEffect('#FFFEE9', 0, 0.8);
+		} else {
+			this.$weather.animate({
+				opacity: 1.0,
+			}, 300).animate({
+				opacity: isIntense ? 0.9 : 0.5,
+			}, 300);
+		}
 	}
 	updateWeather(instant?: boolean) {
 		if (!this.animating) return;
@@ -976,7 +980,7 @@ export class BattleScene implements BattleSceneStub {
 			case 'grassyterrain':
 			case 'mistyterrain':
 			case 'psychicterrain':
-      case 'stickyterrain':
+    		case 'stickyterrain':
 				terrain = pwid;
 				break;
 			default:

@@ -1316,17 +1316,17 @@ export class Battle {
 		this.turnsSinceMoved = 0;
 		this.scene.updateAcceleration();
 	}
-	changeWeather(weatherName: string, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect) {
+	changeWeather(weatherName: string, poke?: Pokemon, isUpkeep?: boolean, ability?: Effect, noDamage?:boolean) {
 		let weather = toID(weatherName);
 		if (!weather || weather === 'none') {
 			weather = '' as ID;
 		}
-		if (isUpkeep) {
+		if (isUpkeep || noDamage) {
 			if (this.weather && this.weatherTimeLeft) {
 				this.weatherTimeLeft--;
 				if (this.weatherMinTimeLeft !== 0) this.weatherMinTimeLeft--;
 			}
-			if (this.seeking === null) {
+			if (this.seeking === null && isUpkeep) {
 				this.scene.upkeepWeather();
 			}
 			return;
@@ -2884,7 +2884,7 @@ export class Battle {
 			if (!effect.id || effect.id === 'none') {
 				kwArgs.from = this.weather;
 			}
-			this.changeWeather(effect.name, poke, !!kwArgs.upkeep, ability);
+			this.changeWeather(effect.name, poke, !!kwArgs.upkeep, ability, !!kwArgs.noupkeepdamage);
 			this.log(args, kwArgs);
 			break;
 		}

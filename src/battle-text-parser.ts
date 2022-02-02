@@ -778,7 +778,7 @@ class BattleTextParser {
 				if (!template) return this.template('endFieldEffect').replace('[EFFECT]', this.effect(weather));
 				return template;
 			}
-			if (kwArgs.upkeep) {
+			if (kwArgs.upkeep || kwArgs.noupkeepdamage) {
 				return this.template('upkeep', weather, 'NODEFAULT');
 			}
 			const line1 = this.maybeAbility(kwArgs.from, kwArgs.of);
