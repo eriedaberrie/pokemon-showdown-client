@@ -36,10 +36,10 @@ package-lock.json
 !/data/pokedex-mini.js
 !/data/pokedex-mini-bw.js
 
-!/js/battle-sound.js
-!/data/moves.js
-!/data/graphics.js
-!/js/battle-tooltips.js
-!/js/battle.js
-!/data/items.js
-!/data/abilities.js
+# !/js/battle-sound.js
+# !/data/moves.js
+# !/data/graphics.js
+# !/js/battle-tooltips.js
+# !/js/battle.js
+# !/data/items.js
+# !/data/abilities.js
