@@ -955,11 +955,15 @@ return buf;
 };_proto.
 upkeepWeather=function upkeepWeather(){
 var isIntense=['desolateland','primordialsea','deltastream'].includes(this.curWeather);
+if(this.curWeather==='thunderstorm'){
+this.backgroundEffect('#FFFEE9',0,0.8);
+}else{
 this.$weather.animate({
 opacity:1.0},
 300).animate({
 opacity:isIntense?0.9:0.5},
 300);
+}
 };_proto.
 updateWeather=function updateWeather(instant){var _this3=this;
 if(!this.animating)return;

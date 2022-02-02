@@ -1316,17 +1316,17 @@ resetTurnsSinceMoved=function resetTurnsSinceMoved(){
 this.turnsSinceMoved=0;
 this.scene.updateAcceleration();
 };_proto3.
-changeWeather=function changeWeather(weatherName,poke,isUpkeep,ability){
+changeWeather=function changeWeather(weatherName,poke,isUpkeep,ability,noDamage){
 var weather=toID(weatherName);
 if(!weather||weather==='none'){
 weather='';
 }
-if(isUpkeep){
+if(isUpkeep||noDamage){
 if(this.weather&&this.weatherTimeLeft){
 this.weatherTimeLeft--;
 if(this.weatherMinTimeLeft!==0)this.weatherMinTimeLeft--;
 }
-if(this.seeking===null){
+if(this.seeking===null&&isUpkeep){
 this.scene.upkeepWeather();
 }
 return;
@@ -2884,7 +2884,7 @@ var _ability3=Dex.getEffect(kwArgs.from);
 if(!_effect21.id||_effect21.id==='none'){
 kwArgs.from=this.weather;
 }
-this.changeWeather(_effect21.name,_poke36,!!kwArgs.upkeep,_ability3);
+this.changeWeather(_effect21.name,_poke36,!!kwArgs.upkeep,_ability3,!!kwArgs.noupkeepdamage);
 this.log(args,kwArgs);
 break;
 }
