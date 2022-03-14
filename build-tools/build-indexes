@@ -16,7 +16,7 @@ if (!fs.existsSync('data/pokemon-showdown')) {
 
 // oml stop interrupting my git pulls
 try {
-  fs.unlinkSync('./data/pokemon-showdown/tools/simulate/index.js');
+	fs.unlinkSync('./data/pokemon-showdown/tools/simulate/index.js');
 } catch (e) {}
 
 process.stdout.write("Syncing data from Git repository... ");
@@ -362,7 +362,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			const tier = (() => {
 				if (isNatDex) {
 					const unobtainables = [
-						'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay', 'Pikachu-Libre', 'Pikachu-PhD', 'Pikachu-Pop-Star', 'Pikachu-Rock-Star', 'Pikachu-Starter', 'Eternatus-Eternamax', 'Urayne-Gamma', 'Actan-Nuclear', 'Baitatao', 'Leviathao', 'Krakanao', 'Aotius', 'Mutios'
+						'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay', 'Pikachu-Libre', 'Pikachu-PhD', 'Pikachu-Pop-Star', 'Pikachu-Rock-Star', 'Pikachu-Starter', 'Eternatus-Eternamax', 'Urayne-Gamma', 'Actan-Nuclear', 'Baitatao', 'Leviathao', 'Krakanao', 'Aotius', 'Mutios',
 					].map(toID);
 					if (species.isNonstandard && !['Past', 'Gigantamax'].includes(species.isNonstandard)) return 'Illegal';
 					if (unobtainables.includes(species.id)) return 'Illegal';
@@ -584,11 +584,11 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			if (gen === 'gen7') {
 				return ["CAP", "CAP NFE", "CAP LC", "AG", "Uber", "OU", "(OU)", "UUBL", "UU", "RUBL", "RU", "NUBL", "NU", "PUBL", "PU", "(PU)", "NFE", "LC", "Unreleased"];
 			}
-      
-      if (gen === 'gen6') {
-        return ["CAP", "CAP NFE", "CAP LC", "AG", "CanonUber", "OU", "(OU)", "UUBL", "UU", "RUBL", "RU", "NUBL", "NU", "PUBL", "PU", "(PU)", "(Uber)", "New", "NFE", "LC", "Uber", "Gamma", "Beta", "Alpha", "Unreleased"];
-      }
-      return ["CAP", "CAP NFE", "CAP LC", "AG", "Uber", "CanonUber", "Gamma", "Beta", "Alpha", "OU", "(OU)", "UUBL", "UU", "RUBL", "RU", "NUBL", "NU", "PUBL", "PU", "(PU)", "(Uber)", "New", "NFE", "LC", "Unreleased"];
+
+			if (gen === 'gen6') {
+				return ["CAP", "CAP NFE", "CAP LC", "AG", "CanonUber", "OU", "(OU)", "UUBL", "UU", "RUBL", "RU", "NUBL", "NU", "PUBL", "PU", "(PU)", "(Uber)", "New", "NFE", "LC", "Uber", "Gamma", "Beta", "Alpha", "Unreleased"];
+			}
+			return ["CAP", "CAP NFE", "CAP LC", "AG", "Uber", "CanonUber", "Gamma", "Beta", "Alpha", "OU", "(OU)", "UUBL", "UU", "RUBL", "RU", "NUBL", "NU", "PUBL", "PU", "(PU)", "(Uber)", "New", "NFE", "LC", "Unreleased"];
 		})();
 
 		for (const tier of tierOrder) {
@@ -856,7 +856,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 		if (!learnset) continue;
 		learnsets[id] = {};
 		for (const moveid in learnset) {
-      const gens = learnset[moveid].map(x => Number(x[0]));
+			const gens = learnset[moveid].map(x => Number(x[0]));
 			const minGen = Math.min(...gens);
 			const vcOnly = (minGen === 7 && learnset[moveid].every(x => x[0] !== '7' || x === '7V') ||
 				minGen === 8 && learnset[moveid].every(x => x[0] !== '8' || x === '8V'));

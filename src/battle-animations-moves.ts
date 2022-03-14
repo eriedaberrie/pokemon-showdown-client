@@ -32116,8 +32116,8 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'swing');
 		},
 	},
-  
-  // uranium animations start here
+
+	// uranium animations start here
 	coralbreak: {
 		anim(scene, [attacker, defender]) {
 			scene.showEffect('waterwisp', {
@@ -32166,7 +32166,7 @@ export const BattleMoveAnims: AnimTable = {
 			}, 'decel');
 			attacker.anim({
 				x: (attacker.x * 2 + defender.x) / 3,
-				y: (attacker.y * 2 + defender.y) / 3 -10,
+				y: (attacker.y * 2 + defender.y) / 3 - 10,
 				z: (attacker.z * 2 + defender.z) / 3,
 				time: 50,
 			});

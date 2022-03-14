@@ -731,7 +731,7 @@ function toId() {
 			var self = this;
 			var constructSocket = function () {
 				// var protocol = (Config.server.port === 443 || Config.server.https) ? 'https' : 'http';
-        var protocol = 'http';
+				var protocol = 'http';
 				Config.server.host = $.trim(Config.server.host);
 				try {
 					if (Config.server.host === 'localhost') {
@@ -2643,9 +2643,9 @@ function toId() {
 				var status = offline ? '(Offline)' : data.status.startsWith('!') ? data.status.slice(1) : data.status;
 				buf += '<span class="userstatus' + (offline ? ' offline' : '') + '">' + BattleLog.escapeHTML(status) + '<br /></span>';
 			}
-      if ((userid === 'eriedaberrie' || userid === 'eriedaradberrie') && !offline) {
-        buf += '<small class="usergroup globalgroup"><small>epic dev (coolest guy on the server)</small></small><br />';
-      }
+			if ((userid === 'eriedaberrie' || userid === 'eriedaradberrie') && !offline) {
+				buf += '<small class="usergroup globalgroup"><small>epic dev (coolest guy on the server)</small></small><br />';
+			}
 			if (groupName) {
 				buf += '<small class="usergroup roomgroup">' + groupName + '</small>';
 				if (globalGroupName) buf += '<br />';
