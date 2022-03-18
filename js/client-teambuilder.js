@@ -777,6 +777,7 @@
 										case 'minyan': case 'vilucard':
 										case 'cocoran': case 'cararalm': case 'cocancer':
 										case 'jackdeay': case 'winotinger':
+											if (nonick) nickname += '-Mystery';
 											speciesid += 'mystery';
 											species = dex.species.get(speciesid);
 											break;
