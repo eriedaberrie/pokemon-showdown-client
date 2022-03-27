@@ -785,7 +785,7 @@
 									break;
 							}
 
-							teamstr += nickname + '|';
+							teamstr += nickname.replace(/\|/g, '') + '|';
 							if (!nonick) teamstr += speciesid;
 							teamstr += '|' + item + '|';
 
