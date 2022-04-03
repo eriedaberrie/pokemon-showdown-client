@@ -232,6 +232,8 @@
 				gamma: "Gamma",
 				beta: "Beta",
 				alpha: "Alpha",
+				ulc: "ULC",
+				canonuber: "CanonUber",
 				ou: "OU",
 				uu: "UU",
 				ru: "RU",
@@ -301,7 +303,10 @@
 		// number
 		var tier = this.engine ? this.engine.getTier(pokemon) : pokemon.num;
 		// buf += '<span class="col numcol">' + (pokemon.num >= 0 ? pokemon.num : 'CAP') + '</span> ';
-		buf += '<span class="col numcol">' + tier + '</span> ';
+
+		var tiername = {Gamma: '<big>&#947;&#160;</big>', Beta: '<big>&#946;&#160;</big>', Alpha: '<big>&#945;&#160;</big>', '(Alpha)': '(<big>&#945;</big>)'}[tier];
+		buf += '<span class="col numcol">' + (tiername ? tiername : tier) + '</span> ';
+		// buf += '<span class="col numcol">' + tier + '</span> ';
 
 		// icon
 		buf += '<span class="col iconcol">';

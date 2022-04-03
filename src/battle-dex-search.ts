@@ -612,12 +612,12 @@ abstract class BattleTypedSearch<T extends SearchType> {
 			this.formatType = 'letsgo';
 			this.dex = Dex.mod('gen7letsgo' as ID);
 		}
-    if (format.includes('nationaldex') || format.startsWith('nd') || format.includes('natdex')) {
-      format = (format.startsWith('nd') ? format.slice(2) :
-        format.includes('natdex') ? format.slice(6) : format.slice(11)) as ID;
-      // this.formatType = 'natdex';
-      if (!format) format = 'gamma' as ID;
-    }
+		if (format.includes('nationaldex') || format.startsWith('nd') || format.includes('natdex')) {
+			format = (format.startsWith('nd') ? format.slice(2) :
+				format.includes('natdex') ? format.slice(6) : format.slice(11)) as ID;
+			// this.formatType = 'natdex';
+		if (!format) format = 'gamma' as ID;
+		}
 		if (this.formatType === 'letsgo') format = format.slice(6) as ID;
 		if (format.includes('metronome')) {
 			this.formatType = 'metronome';
@@ -627,6 +627,7 @@ abstract class BattleTypedSearch<T extends SearchType> {
 			this.formatType = 'nfe';
 			if (!format) format = 'ou' as ID;
 		}
+		if (format.includes('uraniumlc')) format = 'ulc' as ID;
 		this.format = format;
 
 		this.species = '' as ID;
@@ -660,23 +661,29 @@ abstract class BattleTypedSearch<T extends SearchType> {
 			this.baseIllegalResults = [];
 			this.illegalReasons = {};
 
-      const natdexbanlist = [
-        'Alakazam-Mega', 'Arceus', 'Blastoise-Mega', 'Blaziken-Mega', 'Calyrex-Ice', 'Calyrex-Shadow', 'Cinderace', 'Darkrai', 'Darmanitan-Galar',
-        'Deoxys-Attack', 'Deoxys-Base', 'Deoxys-Speed', 'Dialga', 'Dracovish', 'Dragapult', 'Eternatus', 'Genesect', 'Gengar-Mega', 'Giratina',
-        'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kangaskhan-Mega', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lucario-Mega',
-        'Lugia', 'Lunala', 'Magearna', 'Marshadow', 'Metagross-Mega', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
-        'Necrozma-Ultra', 'Palkia', 'Pheromosa', 'Rayquaza', 'Reshiram', 'Salamence-Mega', 'Shaymin-Sky', 'Solgaleo', 'Spectrier', 'Tornadus-Therian',
-        'Urshifu-Base', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Zygarde-Base', 'Zygarde-Complete',
-      ];
-      
+			const natdexbanlist = [
+				'Alakazam-Mega', 'Arceus', 'Blastoise-Mega', 'Blaziken-Mega', 'Calyrex-Ice', 'Calyrex-Shadow', 'Cinderace', 'Darkrai', 'Darmanitan-Galar',
+				'Deoxys-Attack', 'Deoxys-Base', 'Deoxys-Speed', 'Dialga', 'Dracovish', 'Dragapult', 'Eternatus', 'Genesect', 'Gengar-Mega', 'Giratina',
+				'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kangaskhan-Mega', 'Kyogre', 'Kyurem-Black', 'Kyurem-White', 'Landorus-Base', 'Lucario-Mega',
+				'Lugia', 'Lunala', 'Magearna', 'Marshadow', 'Metagross-Mega', 'Mewtwo', 'Naganadel', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane',
+				'Necrozma-Ultra', 'Palkia', 'Pheromosa', 'Rayquaza', 'Reshiram', 'Salamence-Mega', 'Shaymin-Sky', 'Solgaleo', 'Spectrier', 'Tornadus-Therian',
+				'Urshifu-Base', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Zygarde-Base', 'Zygarde-Complete',
+			];
+			
 			for (const id in this.getTable()) {
 				if (!(id in legalityFilter)) {
-          const species = this.dex.species.get(id);
-          if (this.dex.gen !== 8 || species.isNonstandard !== "Past" || species.tier === 'Uber' || natdexbanlist.includes(species.baseSpecies) || natdexbanlist.includes(species.name)) {
-            this.baseIllegalResults.push([this.searchType, id as ID]);
-            this.illegalReasons[id] = 'Illegal';
-          }
+					const species = this.dex.species.get(id);
+					if (this.dex.gen !== 8 || species.isNonstandard !== "Past" || species.tier === 'Uber' ||
+							natdexbanlist.includes(species.baseSpecies) || natdexbanlist.includes(species.name)) {
+						this.baseIllegalResults.push([this.searchType, id as ID]);
+						this.illegalReasons[id] = 'Illegal';
+					}
 				}
+			}
+
+			if (this.format === 'alpha') {
+				this.baseIllegalResults.push([this.searchType, 's51' as ID])
+				this.illegalReasons['s51'] = 'Illegal';
 			}
 		}
 
@@ -797,7 +804,7 @@ abstract class BattleTypedSearch<T extends SearchType> {
 		}
 		let table = window.BattleTeambuilderTable;
 		const gen = this.dex.gen;
-    const tableKey = this.formatType === 'doubles' ? `gen${gen}doubles` :
+		const tableKey = this.formatType === 'doubles' ? `gen${gen}doubles` :
 			this.formatType === 'letsgo' ? 'gen7letsgo' :
 			this.formatType === 'bdsp' ? 'gen8bdsp' :
 			this.formatType === 'bdspdoubles' ? 'gen8bdspdoubles' :
@@ -944,6 +951,7 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 		} else if (format === 'gamma') tierSet = tierSet.slice(slices.Gamma);
 		else if (format === 'beta') tierSet = tierSet.slice(slices.Beta);
 		else if (format === 'alpha') tierSet = tierSet.slice(slices.Alpha);
+		else if (format === 'ulc') tierSet = tierSet.slice(slices.ULC);
 		else if (format === 'ou') tierSet = [...tierSet.slice(slices.Gamma), ...tierSet.slice(slices.OU, slices.Uber)];
 		else if (format === 'uu') tierSet = tierSet.slice(slices.UU);
 		else if (format === 'ru') tierSet = tierSet.slice(slices.RU || slices.UU);
@@ -956,7 +964,7 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 			tierSet = tierSet.slice(slices['CAP LC'], slices.AG || slices.Uber).concat(tierSet.slice(slices.LC));
 		} else if (format === 'anythinggoes' || format.endsWith('ag') || format.startsWith('ag')) {
 			// tierSet = tierSet.slice(slices.AG);
-      tierSet = [...tierSet.slice(slices.Uber), ...tierSet.slice(slices.AG, slices.Uber)];
+			tierSet = [...tierSet.slice(slices.Uber), ...tierSet.slice(slices.AG, slices.Uber)];
 		} else if (format.includes('hackmons') || format.endsWith('bh')) tierSet = tierSet.slice(slices.AG || slices.Uber);
 		else if (format === 'monotype') tierSet = tierSet.slice(slices.Uber);
 		else if (format === 'doublesuranium') tierSet = tierSet.slice(slices.Uranium);
@@ -967,20 +975,20 @@ class BattlePokemonSearch extends BattleTypedSearch<'pokemon'> {
 		else if (this.formatType?.startsWith('bdsp') || this.formatType === 'letsgo' || this.formatType === 'stadium') {
 			tierSet = tierSet.slice(slices.Uber);
 		} else if (!isDoublesOrBS) {
-      /*
+			/*
 			tierSet = [
 				...tierSet.slice(slices.OU, slices.UU),
 				...tierSet.slice(slices.AG, slices.Uber),
 				...tierSet.slice(slices.Uber, slices.OU),
 				...tierSet.slice(slices.UU),
 			];
-      */
-      tierSet = [
-        ...tierSet.slice(slices.Gamma, slices.Beta),
-        ...tierSet.slice(slices.Uber, slices.Gamma),
-        ...tierSet.slice(slices.Beta),
-        ...tierSet.slice(slices.AG, slices.Uber),
-      ];
+			*/
+			tierSet = [
+				...tierSet.slice(slices.Gamma, slices.Beta),
+				...tierSet.slice(slices.Uber, slices.Gamma),
+				...tierSet.slice(slices.Beta),
+				...tierSet.slice(slices.AG, slices.Uber),
+			];
 		} else {
 			tierSet = [
 				...tierSet.slice(slices.DOU, slices.DUU),
@@ -1393,10 +1401,10 @@ class BattleMoveSearch extends BattleTypedSearch<'move'> {
 			return ['megalauncher', 'technician'].includes(abilityid) && !moves.includes('originpulse');
 		case 'trickroom':
 			return species.baseStats.spe <= 100;
-    case 'gammaray':
-      return !moves.includes('radioacid');
-    case 'nuclearslash':
-      return !moves.includes('atomicpunch');
+		case 'gammaray':
+			return !moves.includes('radioacid');
+		case 'nuclearslash':
+			return !moves.includes('atomicpunch');
 		}
 
 		if (this.formatType === 'doubles' && BattleMoveSearch.GOOD_DOUBLES_MOVES.includes(id)) {
