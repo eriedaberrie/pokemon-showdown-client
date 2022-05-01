@@ -55,12 +55,15 @@ Storage.bg = {
 			} else if (location.host === Config.routes.client) {
 				bgid = ['horizon', 'ocean', 'waterfall', 'shaymin', 'uranium', 'psday'][Math.floor(Math.random() * 6)];
 			} else {
+				bgid = 'uranium';
+				/*
 				$(document.body).css({
 					background: '',
 					'background-size': ''
 				});
 				$('#mainmenubuttoncolors').remove();
 				return true;
+				*/
 			}
 			bgUrl = Dex.resourcePrefix + 'fx/client-bg-' + bgid + '.jpg';
 		}
