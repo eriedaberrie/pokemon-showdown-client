@@ -1534,7 +1534,7 @@ exports.BattlePokemonSprites = {
 	skelerogue:{num:-2127},
 	navighast:{num:-2128},
 	stenowatt:{num:-2129},
-	jungore:{num:-2131},
+	jungore:{num:-2130},
 	majungold:{num:-2131},
 	hagoop:{num:-2132},
 	hagoopnuclear:{num:-2132},

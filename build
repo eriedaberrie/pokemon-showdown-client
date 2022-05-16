@@ -36,14 +36,11 @@ switch (process.argv[2] || '') {
 case 'full':
 	execSync(`node ./build-tools/build-indexes`, options);
 	execSync(`node ./build-tools/build-learnsets`, options);
-	execSync(`node ./build-tools/build-minidex`, options);
+	execSync(`node ./build-tools/build-minidex-real`, options);
 	full = ' full';
 	break;
 case 'a':
 	execSync(`node ./build-tools/build-indexes-quick`, options);
-	break;
-case 'i':
-	execSync(`node ./build-tools/build-minidex-real`, options);
 	break;
 case 'indexes':
 	execSync(`node ./build-tools/build-indexes`, options);
@@ -53,7 +50,7 @@ case 'learnsets':
 	break;
 case 'minidex':
 case 'sprites':
-	execSync(`node ./build-tools/build-minidex`, options);
+	execSync(`node ./build-tools/build-minidex-real`, options);
 	break;
 case 'sets':
 	execSync(`node ./build-tools/build-sets`, options);
