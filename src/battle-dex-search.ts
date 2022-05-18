@@ -681,10 +681,12 @@ abstract class BattleTypedSearch<T extends SearchType> {
 				}
 			}
 
+            /*
 			if (this.format === 'alpha') {
 				this.baseIllegalResults.push([this.searchType, 's51' as ID])
 				this.illegalReasons['s51'] = 'Illegal';
 			}
+            */
 		}
 
 		let results: SearchRow[];
