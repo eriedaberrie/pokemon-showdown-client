@@ -13,7 +13,7 @@
 
 	var tandorMoves = [
 		'', 'megahorn', 'attackorder', 'bugbuzz', 'xscissor', 'signalbeam', 'uturn', 'steamroller', 'bugbite', 'silverwind', 'strugglebug', 'twineedle', 'furycutter', 'leechlife', 'pinmissile', 'defendorder', 'healorder', 'quiverdance', 'ragepowder', 'spiderweb', 'stringshot', 'tailglow', 'foulplay', 'nightdaze', 'crunch', 'darkpulse', 'suckerpunch', 'nightslash', 'bite', 'feintattack', 'snarl', 'assurance', 'payback', 'pursuit', 'thief', 'knockoff', 'beatup', 'fling', 'punishment', 'darkvoid', 'embargo', 'faketears', 'flatter', 'honeclaws', 'memento', 'nastyplot', 'quash', 'snatch', 'switcheroo', 'taunt', 'torment', 'roaroftime', 'dracometeor', 'outrage', 'dragonrush', 'spacialrend', 'dragonpulse', 'dragonclaw', 'dragontail', 'dragonbreath', 'dualchop', 'twister', 'dragonrage', 'dragondance', 'boltstrike', 'thunder', 'volttackle', 'zapcannon', 'fusionbolt', 'thunderbolt', 'wildcharge', 'discharge', 'thunderpunch', 'voltswitch', 'spark', 'thunderfang', 'shockwave', 'electroweb', 'chargebeam', 'thundershock', 'electroball', 'charge', 'magnetrise', 'thunderwave', 'focuspunch', 'highjumpkick', 'closecombat', 'focusblast', 'superpower', 'crosschop', 'dynamicpunch', 'hammerarm', 'jumpkick', 'aurasphere', 'sacredsword', 'secretsword', 'skyuppercut', 'submission', 'brickbreak', 'drainpunch', 'vitalthrow', 'circlethrow', 'forcepalm', 'lowsweep', 'revenge', 'rollingkick', 'wakeupslap', 'karatechop', 'machpunch', 'rocksmash', 'stormthrow', 'vacuumwave', 'doublekick', 'armthrust', 'triplekick', 'counter', 'finalgambit', 'lowkick', 'reversal', 'seismictoss', 'bulkup', 'detect', 'quickguard', 'vcreate', 'blastburn', 'eruption', 'overheat', 'blueflare', 'fireblast', 'flareblitz', 'magmastorm', 'fusionflare', 'heatwave', 'inferno', 'sacredfire', 'searingshot', 'flamethrower', 'blazekick', 'fierydance', 'lavaplume', 'firepunch', 'flameburst', 'firefang', 'flamewheel', 'firepledge', 'flamecharge', 'ember', 'firespin', 'incinerate', 'heatcrash', 'sunnyday', 'willowisp', 'skyattack', 'bravebird', 'hurricane', 'aeroblast', 'fly', 'bounce', 'drillpeck', 'airslash', 'aerialace', 'chatter', 'pluck', 'skydrop', 'wingattack', 'acrobatics', 'aircutter', 'gust', 'peck', 'defog', 'featherdance', 'mirrormove', 'roost', 'tailwind', 'shadowforce', 'shadowball', 'shadowclaw', 'ominouswind', 'shadowpunch', 'hex', 'shadowsneak', 'astonish', 'lick', 'nightshade', 'confuseray', 'curse', 'destinybond', 'grudge', 'nightmare', 'spite', 'frenzyplant', 'leafstorm', 'petaldance', 'powerwhip', 'seedflare', 'solarbeam', 'woodhammer', 'leafblade', 'energyball', 'seedbomb', 'gigadrain', 'hornleech', 'leaftornado', 'magicalleaf', 'needlearm', 'razorleaf', 'grasspledge', 'megadrain', 'vinewhip', 'bulletseed', 'absorb', 'grassknot', 'aromatherapy', 'cottonguard', 'cottonspore', 'grasswhistle', 'ingrain', 'leechseed', 'sleeppowder', 'spore', 'stunspore', 'synthesis', 'worryseed', 'earthquake', 'earthpower', 'dig', 'drillrun', 'boneclub', 'mudbomb', 'bulldoze', 'mudshot', 'bonemerang', 'sandtomb', 'bonerush', 'mudslap', 'fissure', 'magnitude', 'mudsport', 'sandattack', 'spikes', 'freezeshock', 'iceburn', 'blizzard', 'icebeam', 'iciclecrash', 'icepunch', 'aurorabeam', 'glaciate', 'icefang', 'avalanche', 'icywind', 'frostbreath', 'iceshard', 'powdersnow', 'iceball', 'iciclespear', 'sheercold', 'hail', 'haze', 'mist', 'explosion', 'selfdestruct', 'gigaimpact', 'hyperbeam', 'lastresort', 'doubleedge', 'headcharge', 'megakick', 'thrash', 'eggbomb', 'judgment', 'skullbash', 'hypervoice', 'rockclimb', 'takedown', 'uproar', 'bodyslam', 'technoblast', 'extremespeed', 'hyperfang', 'megapunch', 'razorwind', 'slam', 'strength', 'triattack', 'crushclaw', 'relicsong', 'chipaway', 'dizzypunch', 'facade', 'headbutt', 'retaliate', 'secretpower', 'slash', 'hornattack', 'stomp', 'covet', 'round', 'smellingsalt', 'swift', 'vicegrip', 'cut', 'struggle', 'tackle', 'weatherball', 'echoedvoice', 'fakeout', 'falseswipe', 'goldenfist', 'pound', 'quickattack', 'scratch', 'snore', 'doublehit', 'feint', 'tailslap', 'rage', 'rapidspin', 'spikecannon', 'cometpunch', 'furyswipes', 'barrage', 'bind', 'doubleslap', 'furyattack', 'wrap', 'constrict', 'bide', 'crushgrip', 'endeavor', 'flail', 'frustration', 'guillotine', 'hiddenpower', 'horndrill', 'naturalgift', 'present', 'return', 'sonicboom', 'spitup', 'superfang', 'trumpcard', 'wringout', 'acupressure', 'afteryou', 'assist', 'attract', 'batonpass', 'bellydrum', 'bestow', 'block', 'camouflage', 'captivate', 'charm', 'conversion', 'conversion2', 'copycat', 'defensecurl', 'disable', 'doubleteam', 'encore', 'endure', 'entrainment', 'flash', 'focusenergy', 'followme', 'foresight', 'glare', 'growl', 'growth', 'harden', 'healbell', 'helpinghand', 'howl', 'leer', 'lockon', 'lovelykiss', 'luckychant', 'mefirst', 'meanlook', 'metronome', 'milkdrink', 'mimic', 'mindreader', 'minimize', 'moonlight', 'morningsun', 'naturepower', 'odorsleuth', 'painsplit', 'perishsong', 'protect', 'psychup', 'recover', 'recycle', 'reflecttype', 'refresh', 'roar', 'safeguard', 'scaryface', 'screech', 'sharpen', 'shellsmash', 'simplebeam', 'sing', 'sketch', 'slackoff', 'sleeptalk', 'smokescreen', 'softboiled', 'splash', 'stockpile', 'substitute', 'supersonic', 'swagger', 'swallow', 'sweetkiss', 'sweetscent', 'swordsdance', 'tailwhip', 'teeterdance', 'tickle', 'transform', 'whirlwind', 'wish', 'workup', 'yawn', 'gunkshot', 'sludgewave', 'sludgebomb', 'poisonjab', 'crosspoison', 'sludge', 'venoshock', 'clearsmog', 'poisonfang', 'poisontail', 'acid', 'acidspray', 'smog', 'poisonsting', 'acidarmor', 'coil', 'gastroacid', 'poisongas', 'poisonpowder', 'toxic', 'toxicspikes', 'psychoboost', 'dreameater', 'futuresight', 'psystrike', 'psychic', 'extrasensory', 'psyshock', 'zenheadbutt', 'lusterpurge', 'mistball', 'psychocut', 'synchronoise', 'psybeam', 'heartstamp', 'confusion', 'mirrorcoat', 'psywave', 'storedpower', 'agility', 'allyswitch', 'amnesia', 'barrier', 'calmmind', 'cosmicpower', 'gravity', 'guardsplit', 'guardswap', 'healblock', 'healpulse', 'healingwish', 'heartswap', 'hypnosis', 'imprison', 'kinesis', 'lightscreen', 'lunardance', 'magiccoat', 'magicroom', 'meditate', 'miracleeye', 'powersplit', 'powerswap', 'powertrick', 'psychoshift', 'reflect', 'rest', 'roleplay', 'skillswap', 'telekinesis', 'teleport', 'trick', 'trickroom', 'wonderroom', 'headsmash', 'rockwrecker', 'stoneedge', 'rockslide', 'powergem', 'ancientpower', 'rockthrow', 'rocktomb', 'smackdown', 'rollout', 'rockblast', 'rockpolish', 'sandstorm', 'stealthrock', 'wideguard', 'doomdesire', 'irontail', 'meteormash', 'flashcannon', 'ironhead', 'steelwing', 'mirrorshot', 'magnetbomb', 'geargrind', 'metalclaw', 'bulletpunch', 'gyroball', 'heavyslam', 'metalburst', 'autotomize', 'irondefense', 'metalsound', 'shiftgear', 'hydrocannon', 'waterspout', 'hydropump', 'muddywater', 'surf', 'aquatail', 'crabhammer', 'dive', 'scald', 'waterfall', 'razorshell', 'brine', 'bubblebeam', 'octazooka', 'waterpulse', 'waterpledge', 'aquajet', 'watergun', 'clamp', 'whirlpool', 'bubble', 'aquaring', 'raindance', 'soak', 'watersport', 'withdraw', 'coralbreak', 'atomicpunch', 'metalwhip', '', 'nuclearwaste', 'gammaray', 'radioacid', 'skyfall', 'flameimpact', 'drainingkiss', 'eerieimpulse', 'electricterrain', 'electrify', 'fairylock', 'fairywind', 'fellstinger', 'flowershield', 'flyingpress', 'forestscurse', 'freezedry', 'geomancy', 'grassyterrain', 'infestation', 'iondeluge', 'kingsshield', 'landswrath', 'magneticflux', 'matblock', 'mistyterrain', 'moonblast', 'mysticalfire', 'nobleroar', 'nuzzle', 'oblivionwing', 'paraboliccharge', 'partingshot', 'petalblizzard', 'phantomforce', 'playnice', 'playrough', 'powder', 'poweruppunch', 'rototiller', 'spikyshield', 'stickyweb', 'topsyturvy', 'trickortreat', 'venomdrench', 'watershuriken', 'aromaticmist', 'babydolleyes', 'belch', 'boomburst', 'confide', 'craftyshield', 'dazzlinggleam', 'disarmingvoice', 'subduction', 'instantcrush', 'getlucky', 'laserpulse', 'gemstoneglimmer', 'halflife', 'oceanswrath', 'fissionburst', 'causticbreath', 'nuclearslash', 'thunderstorm', 'suddenstrike', 'expunge', 'fallout', 'protonbeam', 'infernalblade', 'quantumleap', 'metalcruncher', 'drainlife', 'stickyterrain', 'nuclearwind'
-	]
+	];
 
 	exports.TeambuilderRoom = exports.Room.extend({
 		type: 'teambuilder',
@@ -701,7 +701,7 @@
 		importSaves: function (e) {
 			var files = e.currentTarget.files;
 			var teambuilder = this;
-			
+
 			for (var i = 0; i < files.length; i++) {
 				var reader = new FileReader();
 				var dex = Dex.forGen(6);
@@ -714,7 +714,7 @@
 						for (var j = 0; j < partydata.length; j++) {
 							if (partydata[j]['@eggsteps'] > 0) continue;
 							var species = dex.species.get(tandorDex[partydata[j]['@species'] - 1]);
-							
+
 							var speciesid = species.id;
 
 							var nickname = partydata[j]['@name'];
@@ -722,67 +722,68 @@
 							var item = tandorItems[partydata[j]['@item']];
 
 							switch (partydata[j]['@form']) {
-								case 1:
-									switch (speciesid) {
-										case 'chyinmunk': case 'kinetmunk':
-										case 'tonemy': case 'tofurang':
-										case 'magikarp':
-										case 'owten': case 'eshouten':
-										case 'tancoon': case 'tanscure':
-										case 'pahar': case 'palij': case 'pajay':
-										case 'jerbolta':
-										case 'costraw': case 'trawpint':
-										case 'gligar': case 'gliscor':
-										case 'corsola': case 'corsoreef':
-										case 'tubjaw': case 'tubareel':
-										case 'nupin': case 'gellin':
-										case 'barand':
-										case 'paraudio': case 'paraboom':
-										case 'chupacho': case 'luchabra':
-										case 'hagoop': case 'hagross':
-										case 'actan':
-											// Nuclear mons are separate species, so this prevents nickname illegalities
-											if (nonick) nickname += '-Nuclear';
-											speciesid += 'nuclear';
-											species = dex.species.get(speciesid);
-											break;
-										case 'urayne':
-											speciesid += 'beta';
-											break;
-									}
+							case 1:
+								switch (speciesid) {
+								case 'chyinmunk': case 'kinetmunk':
+								case 'tonemy': case 'tofurang':
+								case 'magikarp':
+								case 'owten': case 'eshouten':
+								case 'tancoon': case 'tanscure':
+								case 'pahar': case 'palij': case 'pajay':
+								case 'jerbolta':
+								case 'costraw': case 'trawpint':
+								case 'gligar': case 'gliscor':
+								case 'corsola': case 'corsoreef':
+								case 'tubjaw': case 'tubareel':
+								case 'nupin': case 'gellin':
+								case 'barand':
+								case 'paraudio': case 'paraboom':
+								case 'chupacho': case 'luchabra':
+								case 'hagoop': case 'hagross':
+								case 'actan':
+									// Nuclear mons are separate species, so this prevents nickname illegalities
+									if (nonick) nickname += '-Nuclear';
+									speciesid += 'nuclear';
+									species = dex.species.get(speciesid);
 									break;
-								case 2:
-									switch (speciesid) {
-										case 'gyarados':
-										case 'arbok':
-										case 'baariette':
-											if (item !== '' && dex.item.get(item).megaEvolves === species.name) {
-												item = 'nuclear' + item;
-											}
-										case 'ekans':
-										case 'baashaun': case 'baaschaf':
-											// Nuclear mons are separate species, so this prevents nickname illegalities
-											if (nonick) nickname += '-Nuclear';
-											speciesid += 'nuclear';
-											species = dex.species.get(speciesid);
-											break;
-										case 'urayne':
-											speciesid += 'gamma';
-											species = dex.species.get(speciesid);
-											break;
-									}
+								case 'urayne':
+									speciesid += 'beta';
 									break;
-								case 3:
-									switch (speciesid) {
-										case 'minyan': case 'vilucard':
-										case 'cocoran': case 'cararalm': case 'cocancer':
-										case 'jackdeay': case 'winotinger':
-											if (nonick) nickname += '-Mystery';
-											speciesid += 'mystery';
-											species = dex.species.get(speciesid);
-											break;
+								}
+								break;
+							case 2:
+								switch (speciesid) {
+								case 'gyarados':
+								case 'arbok':
+								case 'baariette':
+									if (item !== '' && dex.item.get(item).megaEvolves === species.name) {
+										item = 'nuclear' + item;
 									}
+									// falls through
+								case 'ekans':
+								case 'baashaun': case 'baaschaf':
+									// Nuclear mons are separate species, so this prevents nickname illegalities
+									if (nonick) nickname += '-Nuclear';
+									speciesid += 'nuclear';
+									species = dex.species.get(speciesid);
 									break;
+								case 'urayne':
+									speciesid += 'gamma';
+									species = dex.species.get(speciesid);
+									break;
+								}
+								break;
+							case 3:
+								switch (speciesid) {
+								case 'minyan': case 'vilucard':
+								case 'cocoran': case 'cararalm': case 'cocancer':
+								case 'jackdeay': case 'winotinger':
+									if (nonick) nickname += '-Mystery';
+									speciesid += 'mystery';
+									species = dex.species.get(speciesid);
+									break;
+								}
+								break;
 							}
 
 							teamstr += nickname.replace(/\|/g, '') + '|';
@@ -857,7 +858,7 @@
 							teamstr += '||'; // Everything is level 100, I'm not importing the exp rates
 
 							// Genuinely cannot tell what pokeball type is even used for so this is good enough
-							if (partydata[j]['@happiness'] !== 255) teamstr += partydata[j]['@happiness'] + ',,'
+							if (partydata[j]['@happiness'] !== 255) teamstr += partydata[j]['@happiness'] + ',,';
 
 							if (j < partydata.length - 1) teamstr += ']';
 						}
@@ -874,7 +875,7 @@
 					} catch (er) {
 						alert('Error while parsing file ' + (i + 1) + ': ' + er);
 					}
-				}
+				};
 				reader.readAsArrayBuffer(files[i]);
 			}
 
