@@ -537,9 +537,8 @@
 			} else if (answer === 'C') {
 				buf += '<p>Hijacking the button since I have no clue where else to put the Uranium Showdown credits!</p>';
 				buf += '<p>Involuntary-Twitch and JV created Pok&eacute;mon Uranium, this simulator would obviously be impossible without them.</p>';
-				buf += '<p>Gies from Holon Battle Frontier for making an Insurgence battle simulator (which is still far superior to the official Insurgence sim by the way :P).</p>';
 				buf += '<p>KyriTiger&#35;0862 on Discord for making that awesome Urayne art and letting me use it as the background.</p>';
-				buf += '<p>Coomesk1d&#35;5194 on Discord for letting me use those box icons for Uranium megas.</p>';
+				buf += '<p>Coomesk1d&#35;5194 on Discord for letting me use those box icons for Uranium megas (not used anymore but cool nonetheless).</p>';
 				buf += '<p>Me, eriedaberrie, since I gotta put my name somewhere on this thing.</p>';
 				buf += '<p>And of course finally there\'s the whole Pokemon Showdown team which this whole thing is based on, the actual credits button for that is below.</p>';
 				buf += '<div class="menugroup"><p><a href="https://pokemonshowdown.com/credits" target="_blank"><button class="button mainmenu4"><i class="fa fa-info-circle"></i> Credits (for realz this time)</button></a></p></div>';

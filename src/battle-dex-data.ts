@@ -571,7 +571,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
   jackdearymystery: 1608 + 6,
   winotingermystery: 1608 + 7,
 
-  // uranium mega sprites, courtesy of Coomesk13d#5194
+  // uranium mega sprites, added in 1.2.5
   metalynxmega: 1620 + 0,
   archillesmega: 1620 + 1,
   electruxomega: 1620 + 2,
@@ -582,7 +582,7 @@ const BattlePokemonIconIndexes: {[id: string]: number} = {
   baariettenuclearmega: 1620 + 7,
   drilgannmega: 1620 + 8,
   whimsicottmega: 1620 + 9,
-  s63amega: 1608 + 10,
+  s51amega: 1620 + 10,
   inflagetahmega: 1620 + 11,
   syrentidemega: 1620 + 12,
   dramsamamega: 1620 + 13,
